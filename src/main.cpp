@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <string>
 #include "Music.h"
+#include "List.h"
 
 using namespace std;
 
@@ -11,8 +12,11 @@ using namespace std;
 int main () {
     system("clear");
     int menu =0;
-    Music music;
+   
     string auxString;
+    Music music,music2;
+
+     List <Music> list;
 
 
     while(menu !=4){
@@ -32,9 +36,13 @@ int main () {
             cout<<"set music title"<<endl;
             getline(cin,auxString);
             music.set_titulo(auxString);
+            getline(cin,auxString);
+            music2.set_titulo(auxString);
             cout<<"set "<<music.get_titulo()<<" author name"<<endl;
             getline(cin,auxString);
             music.set_autor(auxString);
+            getline(cin,auxString);
+            music2.set_autor(auxString);
             //TODO: adicionar musica na playlsit
             cout<<music.get_titulo()<<" was added successfuly"<<endl;
             cout << "Press any key to continue...";

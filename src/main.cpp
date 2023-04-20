@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Music.h"
 
 using namespace std;
 
@@ -11,7 +10,5 @@ int main () {
 
     while(menu !=3){
         return 0;
-    }
-
-    return 0;
+    };
 }

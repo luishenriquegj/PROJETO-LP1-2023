@@ -35,7 +35,7 @@ int main () {
             cout<<"set "<<music.get_titulo()<<" author name"<<endl;
             getline(cin,auxString);
             music.set_autor(auxString);
-            //TOO: adicionar musica na playlsit
+            //TODO: adicionar musica na playlsit
             cout<<music.get_titulo()<<" was added successfuly"<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
@@ -45,7 +45,7 @@ int main () {
 
         if(menu ==2) {
             system("clear");
-            //TOO: remover musica na playlsit
+            //TODO: remover musica na playlsit
             music.set_titulo("So far Away");
             cout<<music.get_titulo()<<endl;
             menu = 0;

@@ -5,4 +5,6 @@ include_directories (include)
 
 add_executable (program
   src/main.cpp
-  src/Music.cpp)
+  src/music.cpp
+  src/node.inl
+)

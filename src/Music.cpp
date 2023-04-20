@@ -9,7 +9,7 @@ Music::Music(string autor, string titulo){
     this-> titulo = titulo;
 }
 
-string Music::get_titulo(string titulo){
+string Music::get_titulo(){
     return this-> titulo = titulo;
 }
 
@@ -17,7 +17,7 @@ void Music::set_titulo(string titulo){
     this->titulo=titulo;
 }
 
-string Music::get_autor(string autor){
+string Music::get_autor(){
     return this-> autor = autor;
 }
 

@@ -1,10 +1,7 @@
-template <typename U> 
-Node<U>::Node(){
-    U data = 0;
-    next = nullptr;
-}
-template <typename U> 
-Node<U>::Node( U data){
+#include "Node.h"
+
+template <typename T> 
+Node<T>::Node( T data){
     this->data = data;
     this->next = nullptr;
 }

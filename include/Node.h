@@ -2,19 +2,15 @@
 #define NODE_H
 
 
-template <typename U> 
- 
+template <typename T> 
 class Node {    
-    private:
-        <U> data;
-        Node* next;
     public:
-        Node();
-        Node(U data);
-    
-        
-        #include "node.inl"
+        T data;
+        Node* next;
+        Node(T data);
+
 };
+#include "node.inl"
 
 
 #endif

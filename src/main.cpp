@@ -3,8 +3,9 @@
 #include <cstdlib>
 #include <string>
 #include "Music.h"
+#include "Node.h"
 #include "List.h"
-
+ 
 using namespace std;
 
 
@@ -15,8 +16,8 @@ int main () {
    
     string auxString;
     Music music,music2;
-
-     List <Music> list;
+    Node<Music> n1(music),n2(music2);
+    List<Music> musicList;
 
 
     while(menu !=4){
@@ -24,9 +25,10 @@ int main () {
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
         cout<<"1 - add new song to a playlist"<<endl;
-        cout<<"2- remove a song from a playlist"<<endl;
-        cout<<"3- remove a song from all playlists"<<endl;
-        cout<<"4- exit program"<<endl;
+        cout<<"2 - remove a song from a playlist"<<endl;
+        cout<<"3 - remove a song from all playlists"<<endl;
+        cout<<"4 - show all songs from a playlist"<<endl;
+        cout<<"5 - exit program"<<endl;
         
         cin>> menu;
         cin.ignore();
@@ -36,19 +38,18 @@ int main () {
             cout<<"set music title"<<endl;
             getline(cin,auxString);
             music.set_titulo(auxString);
-            getline(cin,auxString);
-            music2.set_titulo(auxString);
             cout<<"set "<<music.get_titulo()<<" author name"<<endl;
             getline(cin,auxString);
             music.set_autor(auxString);
-            getline(cin,auxString);
-            music2.set_autor(auxString);
-            //TODO: adicionar musica na playlsit
             cout<<music.get_titulo()<<" was added successfuly"<<endl;
+            musicList.add(music);
+            
             cout << "Press any key to continue...";
             cin.ignore();
+            
             system("clear");
             menu = 0;
+            
         }
 
         if(menu ==2) {
@@ -69,10 +70,20 @@ int main () {
             cout<<music.get_titulo()<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
+            system("clear");
             menu = 0;
         }
 
         if(menu==4) {
+            system("clear");
+            cout << "exibiting all playlist songs..."<<endl;
+            musicList.print();
+            cout << "Press any key to continue...";
+            cin.ignore();
+            menu = 0;
+        }
+
+         if(menu==5) {
             system("clear");
             cout<<"Exiting C0DEM4N"<<endl;
             system("clear");

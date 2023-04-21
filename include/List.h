@@ -3,20 +3,22 @@
 
 #include "Node.h"
 
-template <typename Y> 
+template <typename T> 
 
 class List {    
-    private:
-        Node<Y>* head;
-        Node<Y>* tail;
     public:
+        Node<T>* head;
+        Node<T>* tail;
+        Node<T>* data;
         List();
-        List(Node<Y>* head);    
-        void setTail(Node<Y>* tail);
-        void setHead(Node<Y>* head);
+        void print();
+        void add(T data);
+        void setTail(Node<T>* tail);
+        void setHead(Node<T>* head);
         
-    #include "list.inl"
+
 };
+        #include"list.inl"
 
 
 #endif

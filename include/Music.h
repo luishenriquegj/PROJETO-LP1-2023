@@ -17,6 +17,11 @@ class Music {
         std::string get_autor();
         void set_autor(std::string autor);
 
+        friend std::ostream& operator<<(std::ostream& os, const Music& music) {
+        os << "Title: " << music.titulo << "\n";
+        os << "Artist: " << music.autor << "\n";
+        return os;
+    }
 };
 
 

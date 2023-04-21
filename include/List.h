@@ -15,6 +15,7 @@ class List {
         void print();
         void add(T data);
         int findSong();
+        int removeSong();
         
 
 };

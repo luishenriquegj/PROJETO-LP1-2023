@@ -55,13 +55,11 @@ int main () {
 
         if(menu ==2) {
             system("clear");
-            //TODO: remover musica na playlsit
-            music.setTitle("So far Away");
-            cout<<music.getTitle()<<endl;
-            menu = 0;
+            //TODO: remover musica em uma playlsit
+            musicList.removeSong();
             cout << "Press any key to continue...";
             cin.ignore();
-            system("clear");
+            menu = 0;
         }
 
         if(menu ==3) {
@@ -91,11 +89,11 @@ int main () {
             menu=0;
         }
 
-        if(menu==6) {
+         if(menu==6) {
             system("clear");
-            cout<<"Exiting C0DEM4N"<<endl;
-            system("clear");
-            return 0;
+            musicList.findSong();
+          
+            menu=0;
         }
 
     };

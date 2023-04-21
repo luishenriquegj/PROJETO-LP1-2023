@@ -58,4 +58,39 @@ int List<T>::findSong() {
     return 0;
 }
 
+template<typename T>
+int List<T>::removeSong() {
+    Node<T>* current = this->head;
+    int* aux =nullptr;
+    std::string musicTitle;
+
+    std::cout<<"what song are you looking for?"<<std::endl;
+    getline(std::cin,musicTitle);
+
+
+    while (current != nullptr) {
+        if(current->data.getTitle() == musicTitle){
+             std::cout<<"cheguei title aq"<<std::endl;
+            if(current->next == nullptr) {
+                std::cout<<"cheguei 1 aq"<<std::endl;
+                Node<T>* current2 = this->head;
+                while(current2 != nullptr){
+                    if(current2->next->next == nullptr){
+                        std::cout<<"cheguei 2 aq"<<std::endl;
+                        delete current2->next->next;
+                        current2->next = nullptr;
+                    }
+                    current2 = current2->next;
+                }
+
+            }
+            
+            
+        }
+        current = current->next;
+    }
+    
+    return 0;
+}
+
 

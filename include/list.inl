@@ -1,6 +1,10 @@
 #include "List.h"
 #include "Node.h"
 #include <unistd.h>
+#include <string>
+#include <algorithm>
+#include <iostream>
+#include <cstdlib>
 
 template <typename T>
 List<T>::List() {
@@ -33,13 +37,25 @@ void List<T>::print() {
     }
 }
 
+template<typename T>
+int List<T>::findSong() {
+    Node<T>* current = this->head;
+    std::string musicTitle;
 
-template <typename T>
-void List<T>::setTail(Node<T>* tail) {
-    this->tail = tail;
-};
+    std::cout<<"what song are you looking for?"<<std::endl;
+    getline(std::cin,musicTitle);
+    while (current != nullptr) {
+        
+        if(current->data.getTitle() == musicTitle){
+            std::cout<<"song found:"<<"\n"<<"title:"<<current->data.getTitle()<<"\n"<<"author:"<<current->data.getAuthor()<<std::endl;
+            std::cout << "Press any key to continue...";
+            std::cin.ignore();
+            system("clear");
+            return  1;
+        }
+        current = current->next;
+    }
+    return 0;
+}
 
-template <typename T>
-void List<T>::setHead(Node<T>* head) {
-    this->head = head;
-};
+

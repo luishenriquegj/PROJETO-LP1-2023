@@ -4,23 +4,23 @@ using namespace std;
 
 Music::Music(){}
 
-Music::Music(string autor, string titulo){
-    this-> autor = autor;
-    this-> titulo = titulo;
+Music::Music(string author, string title){
+    this-> author = author;
+    this-> title = title;
 }
 
-string Music::get_titulo(){
-    return this-> titulo = titulo;
+string Music::getTitle(){
+    return this-> title = title;
 }
 
-void Music::set_titulo(string titulo){
-    this->titulo=titulo;
+void Music::setTitle(string title){
+    this->title=title;
 }
 
-string Music::get_autor(){
-    return this-> autor = autor;
+string Music::getAuthor(){
+    return this-> author = author;
 }
 
-void Music::set_autor(string autor){
-    this->autor=autor;
+void Music::setAuthor(string author){
+    this->author=author;
 }

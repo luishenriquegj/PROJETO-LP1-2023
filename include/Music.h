@@ -6,20 +6,20 @@
 class Music {
 
     private:
-        std::string titulo;
-        std::string autor;
+        std::string title;
+        std::string author;
 
     public:
         Music();
-        Music(std::string autor,std::string titulo);
-        std::string get_titulo();
-        void set_titulo(std::string titulo);
-        std::string get_autor();
-        void set_autor(std::string autor);
+        Music(std::string author,std::string title);
+        std::string getTitle();
+        void setTitle(std::string title);
+        std::string getAuthor();
+        void setAuthor(std::string author);
 
         friend std::ostream& operator<<(std::ostream& os, const Music& music) {
-        os << "Title: " << music.titulo << "\n";
-        os << "Artist: " << music.autor << "\n";
+        os << "Title: " << music.title << "\n";
+        os << "Artist: " << music.author << "\n";
         return os;
     }
 };

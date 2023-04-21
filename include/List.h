@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include "Node.h"
+#include <string>
 
 template <typename T> 
 
@@ -13,8 +14,7 @@ class List {
         List();
         void print();
         void add(T data);
-        void setTail(Node<T>* tail);
-        void setHead(Node<T>* head);
+        int findSong();
         
 
 };

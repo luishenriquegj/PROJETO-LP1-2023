@@ -20,7 +20,7 @@ int main () {
     List<Music> musicList;
 
 
-    while(menu !=4){
+    while(menu !=6){
         cout<<"WELCOME TO C0DEM4N"<<endl;
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
@@ -28,7 +28,8 @@ int main () {
         cout<<"2 - remove a song from a playlist"<<endl;
         cout<<"3 - remove a song from all playlists"<<endl;
         cout<<"4 - show all songs from a playlist"<<endl;
-        cout<<"5 - exit program"<<endl;
+        cout<<"5 - search a song by title"<<endl;
+        cout<<"6 - exit program"<<endl;
         
         cin>> menu;
         cin.ignore();
@@ -37,11 +38,11 @@ int main () {
             system("clear");
             cout<<"set music title"<<endl;
             getline(cin,auxString);
-            music.set_titulo(auxString);
-            cout<<"set "<<music.get_titulo()<<" author name"<<endl;
+            music.setTitle(auxString);
+            cout<<"set "<<music.getTitle()<<" author name"<<endl;
             getline(cin,auxString);
-            music.set_autor(auxString);
-            cout<<music.get_titulo()<<" was added successfuly"<<endl;
+            music.setAuthor(auxString);
+            cout<<music.getTitle()<<" was added successfuly"<<endl;
             musicList.add(music);
             
             cout << "Press any key to continue...";
@@ -55,8 +56,8 @@ int main () {
         if(menu ==2) {
             system("clear");
             //TODO: remover musica na playlsit
-            music.set_titulo("So far Away");
-            cout<<music.get_titulo()<<endl;
+            music.setTitle("So far Away");
+            cout<<music.getTitle()<<endl;
             menu = 0;
             cout << "Press any key to continue...";
             cin.ignore();
@@ -66,8 +67,8 @@ int main () {
         if(menu ==3) {
             system("clear");
             //TOO: remover musica de todas as playlsit
-            music.set_titulo("So far Away");
-            cout<<music.get_titulo()<<endl;
+            music.setTitle("So far Away");
+            cout<<music.getTitle()<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
             system("clear");
@@ -83,7 +84,14 @@ int main () {
             menu = 0;
         }
 
-         if(menu==5) {
+        if(menu==5) {
+            system("clear");
+            musicList.findSong();
+          
+            menu=0;
+        }
+
+        if(menu==6) {
             system("clear");
             cout<<"Exiting C0DEM4N"<<endl;
             system("clear");

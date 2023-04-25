@@ -13,12 +13,22 @@ using namespace std;
 int main () {
     system("clear");
     int menu =0;
-   
-    string auxString;
-    Music music,music2;
-    Node<Music> n1(music),n2(music2);
-    List<Music> musicList;
+    
 
+    /*
+    listaencadeada <musica*>
+
+    musica *musica1 = new musica();
+    musica1->setTitulo("MUSICA1");
+    
+    musica.adicionar();
+    */
+
+    //tem que ser array de musica, mas como n tem como fazer array de musica infinita vai ter que fazer alocação dinamica
+    string auxString;
+    Music music;
+    Node<Music> n1(music);
+    List<Music> musicList;
 
     while(menu !=6){
         cout<<"WELCOME TO C0DEM4N"<<endl;
@@ -30,7 +40,7 @@ int main () {
         cout<<"4 - show all songs from a playlist"<<endl;
         cout<<"5 - search a song by title"<<endl;
         cout<<"6 - exit program"<<endl;
-        
+        cout <<music<<endl;
         cin>> menu;
         cin.ignore();
 

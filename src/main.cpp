@@ -41,7 +41,6 @@ int main () {
         cout<<"5 - search a song by title"<<endl;
         cout<<"6 - destruct list"<<endl;
         cout<<"7 - exit program"<<endl;
-        cout <<music<<endl;
         cin>> menu;
         cin.ignore();
 
@@ -50,7 +49,7 @@ int main () {
             cout<<"set music title"<<endl;
             getline(cin,auxString);
             music.setTitle(auxString);
-            cout<<"set "<<music.getTitle()<<"author name"<<endl;
+            cout<<"set "<<music.getTitle()<<" author name "<<endl;
             getline(cin,auxString);
             music.setAuthor(auxString);
             
@@ -109,6 +108,11 @@ int main () {
 
           
             menu=0;
+        }
+        if(menu==7) {
+            system("clear");
+            cout<< "Exiting C0DEM4N...."<<endl;
+            return 0;          
         }
 
     };

@@ -37,8 +37,6 @@ int List<T>::print() {
             std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
             return 0;
     }
-    std::cout<< "cbc "<< this->head->data.getTitle()<<std::endl;
-    std::cout<< "cauda " << this->tail->data.getTitle()<<std::endl;
     Node<T>* current = this->head;
     while (current != nullptr) {
         std::cout << current->data << std::endl;
@@ -62,7 +60,7 @@ int List<T>::findSong() {
     getline(std::cin,musicTitle);
     while (current != nullptr) {
         if(current->data.getTitle() == musicTitle){
-            std::cout<<"song found:"<<"\n"<<"title:"<<current->data.getTitle()<<"\n"<<"author:"<<current->data.getAuthor()<<std::endl;
+            std::cout<<"song found: "<<"\n"<<"title:"<<current->data.getTitle()<<"\n"<<"author:"<<current->data.getAuthor()<<std::endl;
             std::cout << "Press any key to continue...";
             std::cin.ignore();
             system("clear");

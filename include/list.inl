@@ -14,20 +14,32 @@ List<T>::List() {
 
 template <typename T>
 void List<T>::add(T data) {
+    
     Node<T>* newNode = new Node<T>{data};
     if ( this->head == nullptr) {
         this->head = newNode;
-    } else {
+        
+    } 
+    else {
         Node<T>* current =  this->head;
-      while   (current->next != nullptr) {
+        while   (current->next != nullptr) {
             current = current->next;
         }
         current->next = newNode;
+        this->tail = newNode;
+       
     }
+   
 }
 
 template<typename T>
-void List<T>::print() {
+int List<T>::print() {
+    if(this->head == nullptr) {
+            std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
+            return 0;
+    }
+    std::cout<< "cbc "<< this->head->data.getTitle()<<std::endl;
+    std::cout<< "cauda " << this->tail->data.getTitle()<<std::endl;
     Node<T>* current = this->head;
     while (current != nullptr) {
         std::cout << current->data << std::endl;
@@ -35,17 +47,21 @@ void List<T>::print() {
         current = current->next;
         sleep(1);
     }
+    return 1;
 }
 
 template<typename T>
 int List<T>::findSong() {
+     if(this->head == nullptr) {
+            std::cout<<"unable to display playlist, it might be empty or song name is wrong"<<std::endl;
+            return 0;
+    }
     Node<T>* current = this->head;
     std::string musicTitle;
 
     std::cout<<"what song are you looking for?"<<std::endl;
     getline(std::cin,musicTitle);
     while (current != nullptr) {
-        
         if(current->data.getTitle() == musicTitle){
             std::cout<<"song found:"<<"\n"<<"title:"<<current->data.getTitle()<<"\n"<<"author:"<<current->data.getAuthor()<<std::endl;
             std::cout << "Press any key to continue...";
@@ -60,37 +76,39 @@ int List<T>::findSong() {
 
 template<typename T>
 int List<T>::removeSong() {
+    if(this->head== nullptr) {
+            std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
+            return 0;
+    }
     Node<T>* current = this->head;
-    int* aux =nullptr;
+    Node<T>* previous = nullptr;
     std::string musicTitle;
 
-    std::cout<<"what song are you looking for?"<<std::endl;
-    getline(std::cin,musicTitle);
-
-
+    std::cout << "What song are you looking for?" << std::endl;
+    getline(std::cin, musicTitle);
     while (current != nullptr) {
-        if(current->data.getTitle() == musicTitle){
-             std::cout<<"cheguei title aq"<<std::endl;
-            if(current->next == nullptr) {
-                std::cout<<"cheguei 1 aq"<<std::endl;
-                Node<T>* current2 = this->head;
-                while(current2 != nullptr){
-                    if(current2->next->next == nullptr){
-                        std::cout<<"cheguei 2 aq"<<std::endl;
-                        delete current2->next->next;
-                        current2->next = nullptr;
-                    }
-                    current2 = current2->next;
-                }
+        if (current->data.getTitle() == musicTitle) {
+            std::cout << "Found song: " << musicTitle << std::endl;
+            if (current == this->head) {
+                // Remove first node
+                this->head = current->next;
+            } else {
+                // Remove non-first node
+                previous->next = current->next;
+               if (current->data.getTitle() == this->tail->data.getTitle()) {
+                    this->tail = previous;
+               }
 
             }
-            
-            
+            delete current;
+            return 1; // song removed successfully
         }
+        previous = current;
         current = current->next;
     }
-    
-    return 0;
+
+    std::cout << "Song not found: " << musicTitle << std::endl;
+    return 0; // song not found
 }
 
 

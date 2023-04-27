@@ -12,7 +12,7 @@ class List {
         Node<T>* tail;
         Node<T>* data;
         List();
-        void print();
+        int print();
         void add(T data);
         int findSong();
         int removeSong();

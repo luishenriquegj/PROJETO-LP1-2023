@@ -6,4 +6,5 @@ include_directories (include)
 add_executable (program
   src/main.cpp
   src/music.cpp
+  src/playlist.cpp
 )

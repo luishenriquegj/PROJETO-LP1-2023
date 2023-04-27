@@ -1,15 +1,15 @@
-// #include "Playlist.h"
+#include "Playlist.h"
+#include "List.h"
+#include <string>
+#include "Music.h"
 
-// using namespace std;
-
-// template <typename T>
-// Playlist<T>::Playlist(List<T> list,string nome){
-//     this->list = list; 
-// };
-
-// template <typename T>
-// Playlist<T>::Playlist(List<T> list){
-//     this->list = list; 
-// };
-
+using namespace std;
+ 
+Playlist::Playlist(List <Music *> musics,string name){
+    this->name = name;
+    this->musics = musics;
+}
+Playlist::Playlist(){
+    this->name = "";
+}
 

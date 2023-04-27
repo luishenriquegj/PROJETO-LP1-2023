@@ -2,7 +2,9 @@
 
 using namespace std;
 
-Music::Music(){}
+Music::Music(){
+    
+}
 
 Music::Music(string author, string title){
     this-> author = author;

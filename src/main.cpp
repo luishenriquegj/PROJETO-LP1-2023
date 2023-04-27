@@ -5,6 +5,7 @@
 #include "Music.h"
 #include "Node.h"
 #include "List.h"
+#include "Playlist.h"
  
 using namespace std;
 
@@ -25,10 +26,14 @@ int main () {
     */
 
     //tem que ser array de musica, mas como n tem como fazer array de musica infinita vai ter que fazer alocação dinamica
+    // Fazer Destrutor de musica
+
     string auxString;
     Music music;
-    Node<Music> n1(music);
     List<Music> musicList;
+    Playlist x ;
+    List<Playlist> playlists;
+    
 
     while(menu !=7){
         cout<<"WELCOME TO C0DEM4N"<<endl;

@@ -110,4 +110,16 @@ int List<T>::removeSong() {
     return 0; // song not found
 }
 
+template<typename T>
+List<T>::~List() {
+    Node<T>* current = this->head;
+    while(current!=nullptr){
+        Node<T>* aux = current;
+        current = current->next;
+        delete aux;
+    }
+    this->head = nullptr;
+    
+
+}
 

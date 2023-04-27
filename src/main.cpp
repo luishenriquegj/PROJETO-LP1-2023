@@ -30,7 +30,7 @@ int main () {
     Node<Music> n1(music);
     List<Music> musicList;
 
-    while(menu !=6){
+    while(menu !=7){
         cout<<"WELCOME TO C0DEM4N"<<endl;
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
@@ -39,7 +39,8 @@ int main () {
         cout<<"3 - remove a song from all playlists"<<endl;
         cout<<"4 - show all songs from a playlist"<<endl;
         cout<<"5 - search a song by title"<<endl;
-        cout<<"6 - exit program"<<endl;
+        cout<<"6 - destruct list"<<endl;
+        cout<<"7 - exit program"<<endl;
         cout <<music<<endl;
         cin>> menu;
         cin.ignore();
@@ -49,10 +50,11 @@ int main () {
             cout<<"set music title"<<endl;
             getline(cin,auxString);
             music.setTitle(auxString);
-            cout<<"set "<<music.getTitle()<<" author name"<<endl;
+            cout<<"set "<<music.getTitle()<<"author name"<<endl;
             getline(cin,auxString);
             music.setAuthor(auxString);
-            cout<<music.getTitle()<<" was added successfuly"<<endl;
+            
+            cout<<"\n"<<"\033[1m\033[34m" <<music.getTitle()<< "\033[0m"<< " was added successfuly"<<endl;
             musicList.add(music);
             
             cout << "Press any key to continue...";
@@ -98,10 +100,13 @@ int main () {
           
             menu=0;
         }
-
-         if(menu==6) {
+        if(menu==6) {
             system("clear");
-            musicList.findSong();
+            musicList.~List();
+            cout<<"deletei tudo"<<endl;
+            cout << "Press any key to continue...";
+            cin.ignore();
+
           
             menu=0;
         }

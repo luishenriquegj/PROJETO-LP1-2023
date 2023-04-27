@@ -16,6 +16,7 @@ class List {
         void add(T data);
         int findSong();
         int removeSong();
+        ~List();
         
 
 };

@@ -31,21 +31,21 @@ int main () {
     string auxString;
     Music music;
     List<Music> musicList;
-    Playlist x ;
+    Playlist p1 ;
     List<Playlist> playlists;
-    
 
     while(menu !=7){
         cout<<"WELCOME TO C0DEM4N"<<endl;
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
-        cout<<"1 - add new song to a playlist"<<endl;
-        cout<<"2 - remove a song from a playlist"<<endl;
-        cout<<"3 - remove a song from all playlists"<<endl;
-        cout<<"4 - show all songs from a playlist"<<endl;
+        cout<<"1 - add new song to system"<<endl;
+        cout<<"2 - remove a song on system"<<endl;
+        cout<<"3 - remove a song on system"<<endl;
+        cout<<"4 - show all songs on system"<<endl;
         cout<<"5 - search a song by title"<<endl;
         cout<<"6 - destruct list"<<endl;
-        cout<<"7 - exit program"<<endl;
+        cout<<"7 - create or choose the playlist to add a song in it"<<endl;
+        cout<<"8 - exit program"<<endl;
         cin>> menu;
         cin.ignore();
 
@@ -114,7 +114,26 @@ int main () {
           
             menu=0;
         }
-        if(menu==7) {
+        if(menu ==7) {
+            system("clear");
+            cout<<"choose playlist"<<endl;
+            getline(cin,auxString);
+            p1.name = auxString;
+            playlists.add(p1,p1.name);
+            /*
+            cout<<"set "<<music.getTitle()<<" author name "<<endl;
+            getline(cin,auxString);
+            music.setAuthor(auxString);
+            
+            cout<<"\n"<<"\033[1m\033[34m" <<music.getTitle()<< "\033[0m"<< " was added successfuly"<<endl;
+            musicList.add(music);
+            */
+            cout << "Press any key to continue...";
+            cin.ignore();
+            
+            system("clear");
+            menu = 0;
+        if(menu==8) {
             system("clear");
             cout<< "Exiting C0DEM4N...."<<endl;
             return 0;          

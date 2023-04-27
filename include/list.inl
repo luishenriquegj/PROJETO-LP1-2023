@@ -13,8 +13,7 @@ List<T>::List() {
 };
 
 template <typename T>
-void List<T>::add(T data) {
-    
+void List<T>::add(T data) { 
     Node<T>* newNode = new Node<T>{data};
     if ( this->head == nullptr) {
         this->head = newNode;

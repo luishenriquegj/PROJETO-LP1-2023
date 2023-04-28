@@ -3,15 +3,24 @@
 #include "List.h"
 #include "Music.h"
 #include <string>
+#include <iostream>
 
 
-class Playlist {    
-    public:
+class Playlist {  
+
+    private:
         std::string name;
-        List <Music> musics;
+        List <Music*> musics;
+    public:
         Playlist();
-        Playlist(List <Music> musics,std::string name);
-        void add(List <Music> p1,std::string name);
+        Playlist(List <Music*> musics,std::string name);
+        std::string getKey();
+        void addSong(Music* music);;
+        void setName(std::string name);
+        friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
+        os<<"playlsit name:"<< playlist.name<< "\n";
+        return os;
+        }
 
 };
 

@@ -11,7 +11,7 @@ Music::Music(string author, string title){
     this-> title = title;
 }
 
-string Music::getTitle(){
+string Music::getKey(){
     return this-> title = title;
 }
 

@@ -12,7 +12,7 @@ class Music {
     public:
         Music();
         Music(std::string author,std::string title);
-        std::string getTitle();
+        std::string getKey();
         void setTitle(std::string title);
         std::string getAuthor();
         void setAuthor(std::string author);

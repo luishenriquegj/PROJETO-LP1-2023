@@ -14,7 +14,8 @@ class List {
         List();
         int print();
         void add(T data);
-        int findSong();
+        int printItem();
+        T findItem();
         int removeSong();
         ~List();
         

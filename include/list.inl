@@ -48,19 +48,37 @@ int List<T>::print() {
 }
 
 template<typename T>
-int List<T>::findSong() {
+T List<T>::findItem() {
+     if(this->head == nullptr) {
+            std::cout<<"unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
+    }
+    Node<T>* current = this->head;
+    std::string key;
+
+    std::cout<<"search by song/playlist name:"<<std::endl;
+    getline(std::cin,key);
+    while (current != nullptr) {
+        if(current->data.getKey() == key){
+            return  current->data;
+        }
+        current = current->next;
+    }
+}
+
+template<typename T>
+int List<T>::printItem() {
      if(this->head == nullptr) {
             std::cout<<"unable to display playlist, it might be empty or song name is wrong"<<std::endl;
             return 0;
     }
     Node<T>* current = this->head;
-    std::string musicTitle;
+    std::string key;
 
-    std::cout<<"what song are you looking for?"<<std::endl;
-    getline(std::cin,musicTitle);
+    std::cout<<"search by song/playlist name:"<<std::endl;
+    getline(std::cin,key);
     while (current != nullptr) {
-        if(current->data.getTitle() == musicTitle){
-            std::cout<<"song found: "<<"\n"<<"title:"<<current->data.getTitle()<<"\n"<<"author:"<<current->data.getAuthor()<<std::endl;
+        if(current->data.getKey() == key){
+            std::cout<<" found: "<<current->data<<"\n"<<std::endl;
             std::cout << "Press any key to continue...";
             std::cin.ignore();
             system("clear");
@@ -79,20 +97,20 @@ int List<T>::removeSong() {
     }
     Node<T>* current = this->head;
     Node<T>* previous = nullptr;
-    std::string musicTitle;
+    std::string key;
 
     std::cout << "What song are you looking for?" << std::endl;
-    getline(std::cin, musicTitle);
+    getline(std::cin, key);
     while (current != nullptr) {
-        if (current->data.getTitle() == musicTitle) {
-            std::cout << "Found song: " << musicTitle << std::endl;
+        if (current->data.getKey() == key) {
+            std::cout << "Found song: " << key << std::endl;
             if (current == this->head) {
                 // Remove first node
                 this->head = current->next;
             } else {
                 // Remove non-first node
                 previous->next = current->next;
-               if (current->data.getTitle() == this->tail->data.getTitle()) {
+               if (current->data.getKey() == this->tail->data.getKey()) {
                     this->tail = previous;
                }
 
@@ -104,7 +122,7 @@ int List<T>::removeSong() {
         current = current->next;
     }
 
-    std::cout << "Song not found: " << musicTitle << std::endl;
+    std::cout << "Song not found: " << key << std::endl;
     return 0; // song not found
 }
 

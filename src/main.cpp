@@ -34,7 +34,7 @@ int main () {
     Playlist p1 ;
     List<Playlist> playlists;
 
-    while(menu !=7){
+    while(menu !=9){
         cout<<"WELCOME TO C0DEM4N"<<endl;
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
@@ -42,10 +42,11 @@ int main () {
         cout<<"2 - remove a song on system"<<endl;
         cout<<"3 - remove a song on system"<<endl;
         cout<<"4 - show all songs on system"<<endl;
-        cout<<"5 - search a song by title"<<endl;
+        cout<<"5 - add a song to a playlsit"<<endl;
         cout<<"6 - destruct list"<<endl;
-        cout<<"7 - create or choose the playlist to add a song in it"<<endl;
-        cout<<"8 - exit program"<<endl;
+        cout<<"7 - create a new playlist"<<endl;
+        cout<<"8 - find a playlist"<<endl;
+        cout<<"9 - exit program"<<endl;
         cin>> menu;
         cin.ignore();
 
@@ -54,11 +55,11 @@ int main () {
             cout<<"set music title"<<endl;
             getline(cin,auxString);
             music.setTitle(auxString);
-            cout<<"set "<<music.getTitle()<<" author name "<<endl;
+            cout<<"set "<<music.getKey()<<" author name "<<endl;
             getline(cin,auxString);
             music.setAuthor(auxString);
             
-            cout<<"\n"<<"\033[1m\033[34m" <<music.getTitle()<< "\033[0m"<< " was added successfuly"<<endl;
+            cout<<"\n"<<"\033[1m\033[34m" <<music.getKey()<< "\033[0m"<< " was added successfuly"<<endl;
             musicList.add(music);
             
             cout << "Press any key to continue...";
@@ -81,8 +82,6 @@ int main () {
         if(menu ==3) {
             system("clear");
             //TOO: remover musica de todas as playlsit
-            music.setTitle("So far Away");
-            cout<<music.getTitle()<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
             system("clear");
@@ -100,8 +99,14 @@ int main () {
 
         if(menu==5) {
             system("clear");
-            musicList.findSong();
-          
+            cout<<"set music title"<<endl;
+            getline(cin,auxString);
+            music.setTitle(auxString);
+            cout<<"set "<<music.getKey()<<" author name "<<endl;
+            getline(cin,auxString);
+            music.setAuthor(auxString);
+            musicList.add(music);
+            // playlists.findItem().addSong();
             menu=0;
         }
         if(menu==6) {
@@ -116,28 +121,35 @@ int main () {
         }
         if(menu ==7) {
             system("clear");
-            cout<<"choose playlist"<<endl;
+            cout<<"Name a playlist"<<endl;
             getline(cin,auxString);
-            p1.name = auxString;
-            playlists.add(p1,p1.name);
-            /*
-            cout<<"set "<<music.getTitle()<<" author name "<<endl;
-            getline(cin,auxString);
-            music.setAuthor(auxString);
+            p1.setName(auxString);
+            playlists.add(p1);
             
-            cout<<"\n"<<"\033[1m\033[34m" <<music.getTitle()<< "\033[0m"<< " was added successfuly"<<endl;
-            musicList.add(music);
-            */
+           
             cout << "Press any key to continue...";
             cin.ignore();
             
             system("clear");
             menu = 0;
-        if(menu==8) {
+        };
+        if(menu ==8) {
+            system("clear");
+            //TOO: Achar musica ou playlist
+            music.setTitle("So far Away");
+            cout<<playlists.printItem()<<endl;
+            cout << "Press any key to continue...";
+            cin.ignore();
+            system("clear");
+            menu = 0;
+        }
+        
+        if(menu==9) {
             system("clear");
             cout<< "Exiting C0DEM4N...."<<endl;
             return 0;          
         }
+    }
 
-    };
+    return 0;
 }

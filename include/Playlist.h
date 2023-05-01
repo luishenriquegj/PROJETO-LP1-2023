@@ -15,7 +15,8 @@ class Playlist {
         Playlist();
         Playlist(std::string name);
         std::string getKey();
-        void addSong(Music &music);
+        void addSong(Node<Music> *music);
+        void printPlaylistSongs();
         void setName(std::string name);
         friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
         os<<"playlsit name:"<< playlist.name<< "\n";

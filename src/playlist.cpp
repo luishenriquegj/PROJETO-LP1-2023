@@ -8,8 +8,9 @@ using namespace std;
 Playlist::Playlist(){
     this->name = "";
 }
+
 Playlist::Playlist(string name){
-    this->name = "";
+    this->name = name;
 }
 
 string Playlist::getKey(){
@@ -21,10 +22,22 @@ void Playlist::setName(string name){
     
 };
 
-void Playlist::addSong(Music &music){
-    Node<Music>* newMusic = new Node<Music>({music.getKey(),music.getAuthor()});
-    cout<<newMusic<<endl;
-    this->musics->add(newMusic);
+void Playlist::addSong(Node<Music> *music){
+    this->musics->add(music);
+}
+
+void Playlist::printPlaylistSongs(){
+    if(this->musics->head == nullptr) {
+            std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
+            return;
+    }
+    Node<Music>* current = this->musics->head;
+    while (current != nullptr) {
+        std::cout << current->data << std::endl;
+        std::cout << "--------------------------------"<< std::endl;
+        current = current->next;
+        sleep(1);
+    }
 }
 
 

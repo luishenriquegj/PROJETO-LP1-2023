@@ -86,9 +86,7 @@ int main () {
             cout<<"what song are you adding?"<<endl;
             Node <Music>* musicAux = musicList.findItem();
             cout<<"what playlist are you adding "<<musicAux->data.getAuthor()<<" to?"<<endl;
-            // Node <Playlist>* playlistPrint = playlists.findItem();
-            // cout<<playlistPrint->data.getKey()<<endl;
-            // cout<<playlistPrint<<endl;
+            // playlists.data->data.addSong(musicAux)
             menu=0;
         }
         
@@ -108,7 +106,6 @@ int main () {
             cout<<"set playlist name: "<<endl;
             getline(cin,auxString1);
             Node<Playlist>* newNode = new Node<Playlist>(auxString1);
-            cout<<newNode->data.getKey()<<endl;
             playlists.add(newNode);
             cout << "Press any key to continue...";
             cin.ignore();

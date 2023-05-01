@@ -10,16 +10,15 @@ class Playlist {
 
     private:
         std::string name;
-        List <Music>* musics;
+        List <Music> data;
     public:
         Playlist();
         Playlist(std::string name);
+        void setName(std::string name); 
         std::string getKey();
-        void addSong(Node<Music> *music);
-        void printPlaylistSongs();
-        void setName(std::string name);
+        void addSong(Node<Music>* newMusic );
         friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
-        os<<"playlsit name:"<< playlist.name<< "\n";
+        os << "Playlist Name: " << playlist.name << "\n";
         return os;
         }
 

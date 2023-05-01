@@ -11,13 +11,12 @@ class List {
     public:
         Node<T>* head;
         Node<T>* tail;
-        Node<T>* data;
         List();
         int print();
         //passa end memoria
         void add(Node<T> *newNode);
         int printItem();
-        Node <T> * findItem();
+        Node<T>* findItem();
         int removeSong();
         ~List();
         

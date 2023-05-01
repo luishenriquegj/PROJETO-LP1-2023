@@ -14,6 +14,7 @@ List<T>::List() {
 
 template <typename T>
 void List<T>::add(Node <T> *newNode) { 
+    std::cout<<newNode->data.getKey()<<std::endl;
     if ( this->head == nullptr) {
         this->head = newNode;
     } 
@@ -48,7 +49,7 @@ int List<T>::print() {
 }
 
 template<typename T>
-Node<T> * List<T>::findItem() {
+Node<T>* List<T>::findItem() {
     if(this->head == nullptr) {
         std::cout<<"unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
         return nullptr;

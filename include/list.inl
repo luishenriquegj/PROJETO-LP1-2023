@@ -13,11 +13,9 @@ List<T>::List() {
 };
 
 template <typename T>
-void List<T>::add(T data) { 
-    Node<T>* newNode = new Node<T>{data};
+void List<T>::add(Node <T> *newNode) { 
     if ( this->head == nullptr) {
         this->head = newNode;
-        
     } 
     else {
         Node<T>* current =  this->head;
@@ -30,6 +28,8 @@ void List<T>::add(T data) {
     }
    
 }
+
+
 
 template<typename T>
 int List<T>::print() {
@@ -48,21 +48,23 @@ int List<T>::print() {
 }
 
 template<typename T>
-T List<T>::findItem() {
-     if(this->head == nullptr) {
-            std::cout<<"unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
+Node<T> * List<T>::findItem() {
+    if(this->head == nullptr) {
+        std::cout<<"unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
+        return nullptr;
     }
     Node<T>* current = this->head;
     std::string key;
 
-    std::cout<<"search by song/playlist name:"<<std::endl;
     getline(std::cin,key);
     while (current != nullptr) {
         if(current->data.getKey() == key){
-            return  current->data;
+            return  current;
         }
         current = current->next;
     }
+
+    return nullptr;
 }
 
 template<typename T>

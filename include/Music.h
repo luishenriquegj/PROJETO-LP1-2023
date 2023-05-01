@@ -11,7 +11,7 @@ class Music {
 
     public:
         Music();
-        Music(std::string author,std::string title);
+        Music(std::string title, std::string author);
         std::string getKey();
         void setTitle(std::string title);
         std::string getAuthor();

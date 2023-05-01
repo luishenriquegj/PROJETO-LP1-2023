@@ -4,12 +4,11 @@
 #include "Music.h"
 
 using namespace std;
- 
-Playlist::Playlist(List <Music*> musics,string name){
-    this->name = name;
-    this->musics = musics;
-}
+
 Playlist::Playlist(){
+    this->name = "";
+}
+Playlist::Playlist(string name){
     this->name = "";
 }
 
@@ -22,9 +21,10 @@ void Playlist::setName(string name){
     
 };
 
-void Playlist::addSong(Music* music){
-
-    this->musics.add(music);
+void Playlist::addSong(Music &music){
+    Node<Music>* newMusic = new Node<Music>({music.getKey(),music.getAuthor()});
+    cout<<newMusic<<endl;
+    this->musics->add(newMusic);
 }
 
 

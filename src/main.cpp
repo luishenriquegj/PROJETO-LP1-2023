@@ -4,7 +4,6 @@
 #include <string>
 #include "Music.h"
 #include "Node.h"
-#include "List.h"
 #include "Playlist.h"
  
 using namespace std;
@@ -14,21 +13,7 @@ using namespace std;
 int main () {
     system("clear");
     int menu =0;
-    
-
-    /*
-    listaencadeada <musica*>
-
-    musica *musica1 = new musica();
-    musica1->setTitulo("MUSICA1");
-    
-    musica.adicionar();
-    */
-
-    //tem que ser array de musica, mas como n tem como fazer array de musica infinita vai ter que fazer alocação dinamica
-    // Fazer Destrutor de musica
-
-    string auxString;
+    string auxString1,auxString2;
     Music music;
     List<Music> musicList;
     Playlist p1 ;
@@ -53,14 +38,13 @@ int main () {
         if(menu ==1) {
             system("clear");
             cout<<"set music title"<<endl;
-            getline(cin,auxString);
-            music.setTitle(auxString);
-            cout<<"set "<<music.getKey()<<" author name "<<endl;
-            getline(cin,auxString);
-            music.setAuthor(auxString);
+            getline(cin,auxString1);
+            cout<<"set music author"<<endl;
+            getline(cin,auxString2);
+            Node<Music>* newNode = new Node<Music>({auxString1,auxString2});
             
-            cout<<"\n"<<"\033[1m\033[34m" <<music.getKey()<< "\033[0m"<< " was added successfuly"<<endl;
-            musicList.add(music);
+            cout<<"\n"<<"\033[1m\033[34m" <<newNode->data.getKey()<< "\033[0m"<< " was added successfuly"<<endl;
+            musicList.add(newNode);
             
             cout << "Press any key to continue...";
             cin.ignore();
@@ -99,16 +83,15 @@ int main () {
 
         if(menu==5) {
             system("clear");
-            cout<<"set music title"<<endl;
-            getline(cin,auxString);
-            music.setTitle(auxString);
-            cout<<"set "<<music.getKey()<<" author name "<<endl;
-            getline(cin,auxString);
-            music.setAuthor(auxString);
-            musicList.add(music);
-            // playlists.findItem().addSong();
+            cout<<"what song are you adding?"<<endl;
+            Node <Music>* musicAux = musicList.findItem();
+            cout<<"what playlist are you adding "<<musicAux->data.getAuthor()<<" to?"<<endl;
+            // Node <Playlist>* playlistPrint = playlists.findItem();
+            // cout<<playlistPrint->data.getKey()<<endl;
+            // cout<<playlistPrint<<endl;
             menu=0;
         }
+        
         if(menu==6) {
             system("clear");
             musicList.~List();
@@ -119,25 +102,25 @@ int main () {
           
             menu=0;
         }
+        
         if(menu ==7) {
             system("clear");
-            cout<<"Name a playlist"<<endl;
-            getline(cin,auxString);
-            p1.setName(auxString);
-            playlists.add(p1);
-            
-           
+            cout<<"set playlist name: "<<endl;
+            getline(cin,auxString1);
+            Node<Playlist>* newNode = new Node<Playlist>(auxString1);
+            cout<<newNode->data.getKey()<<endl;
+            playlists.add(newNode);
             cout << "Press any key to continue...";
             cin.ignore();
             
             system("clear");
             menu = 0;
         };
+        
         if(menu ==8) {
             system("clear");
             //TOO: Achar musica ou playlist
-            music.setTitle("So far Away");
-            cout<<playlists.printItem()<<endl;
+            cout<<playlists.print()<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
             system("clear");

@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include "Node.h"
+#include "Playlist.h"
 #include <string>
 
 template <typename T> 
@@ -13,9 +14,10 @@ class List {
         Node<T>* data;
         List();
         int print();
-        void add(T data);
+        //passa end memoria
+        void add(Node<T> *newNode);
         int printItem();
-        T findItem();
+        Node <T> * findItem();
         int removeSong();
         ~List();
         

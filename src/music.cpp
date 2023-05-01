@@ -6,9 +6,9 @@ Music::Music(){
     
 }
 
-Music::Music(string author, string title){
-    this-> author = author;
+Music::Music( string title,string author){
     this-> title = title;
+    this-> author = author;
 }
 
 string Music::getKey(){

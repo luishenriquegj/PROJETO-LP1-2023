@@ -26,8 +26,8 @@ Projeto avaliativo da primeira unidade de Lingaguem de programação 1 de 2023.1
 
  # OBSERVAÇÃO,PARA GERAR A DOCUMENTÇÃO DO DOXYGEN:
     - 1° crie no diretorio raiz do projeto, a pasta docs com o comando:
-      - mkdir build
-    - 3° em seguida digite, *sem entrar na pasta docs* digite:
+      - mkdir docs
+    - 2° em seguida digite, *sem entrar na pasta docs* digite:
       - doxygen
 # ROTEIRO PARA RODAR O PROGRAMA
   - Existem 9 opções iniciais, sendo elas:

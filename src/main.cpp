@@ -5,8 +5,10 @@
 #include "Music.h"
 #include "Node.h"
 #include "Playlist.h"
+#include "RemoveSongFromPlaylist.h"
  
 using namespace std;
+
 
 
 
@@ -36,6 +38,7 @@ int main () {
         cin.ignore();
 
         if(menu ==1) {
+            //adiciona musica ao sistema
             system("clear");
             cout<<"set music title"<<endl;
             getline(cin,auxString1);
@@ -55,10 +58,11 @@ int main () {
         }
 
         if(menu ==2) {
+            //remove musica de uma playlist em especifico
             system("clear");
             cout<<"which playlist are you look for?"<<endl;
             getline(cin,auxString1);
-            playlists.findItem(auxString1)->data.removeSongFromPlaylist();
+            playlists.findItem(auxString1)->data.removeSongFromPlaylist(auxString1);
             cout << "Press any key to continue...";
             cin.ignore();
             menu = 0;
@@ -66,14 +70,19 @@ int main () {
 
         if(menu ==3) {
             system("clear");
-            //TOO: remover musica de todas as playlsit
+            //remove musica de todas as playlsit e do sistema
+            cout<<"what song do you wish to remove from the database?"<<endl;
+            getline(cin,auxString1);
+            musicList.removeSong(auxString1);
+            removeSongFromAll(playlists,auxString1);
             cout << "Press any key to continue...";
             cin.ignore();
-            system("clear");
             menu = 0;
+
         }
 
         if(menu==4) {
+            //mostra todas as musicas do sistema
             system("clear");
             cout << "exibiting all playlist songs..."<<endl;
             musicList.print();
@@ -83,6 +92,7 @@ int main () {
         }
 
         if(menu==5) {
+            //escolhe musica do sistema e adiciona a playlist escolhida
             system("clear");
             cout<<"what song are you adding?"<<endl;
             getline(cin,auxString3);
@@ -98,6 +108,7 @@ int main () {
         if(menu==6) {
             system("clear");
             musicList.~List();
+            playlists.~List();
             cout<<"all songs deleted"<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
@@ -107,6 +118,7 @@ int main () {
         }
         
         if(menu ==7) {
+            //cria uma nova playlist
             system("clear");
             cout<<"set playlist name: "<<endl;
             getline(cin,auxString1);
@@ -120,8 +132,9 @@ int main () {
         };
         
         if(menu ==8) {
+            //mostra todas as playlists e seus conteudos
             system("clear");
-            cout<<playlists.print()<<endl;
+            playlists.print();
             cout << "Press any key to continue...";
             cin.ignore();
             system("clear");
@@ -129,6 +142,7 @@ int main () {
         }
         
         if(menu==9) {
+            //fecha o programa
             system("clear");
             cout<< "Exiting C0DEM4N...."<<endl;
             return 0;          

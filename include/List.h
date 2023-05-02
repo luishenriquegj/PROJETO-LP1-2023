@@ -12,12 +12,12 @@ class List {
         Node<T>* head;
         Node<T>* tail;
         List();
-        int print();
+        void print();
         //passa end memoria
         void add(Node<T> *newNode);
         int printItem();
         Node<T>* findItem(std::string key);
-        int removeSong();
+        int removeSong(std::string key);
         ~List();
 };
         #include"list.inl"

@@ -32,10 +32,10 @@ void List<T>::add(Node <T> *newNode) {
 
 
 template<typename T>
-int List<T>::print() {
+void List<T>::print() {
     if(this->head == nullptr) {
             std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
-            return 0;
+            return;
     }
     Node<T>* current = this->head;
     while (current != nullptr) {
@@ -43,7 +43,7 @@ int List<T>::print() {
         std::cout << "--------------------------------"<< std::endl;
         current = current->next;
     }
-    return 1;
+    return;
 }
 
 template<typename T>
@@ -89,17 +89,14 @@ int List<T>::printItem() {
 }
 
 template<typename T>
-int List<T>::removeSong() {
+int List<T>::removeSong(std::string key) {
     if(this->head== nullptr) {
             std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
             return 0;
     }
     Node<T>* current = this->head;
     Node<T>* previous = nullptr;
-    std::string key;
-
-    std::cout << "What song are you looking for?" << std::endl;
-    getline(std::cin, key);
+    
     while (current != nullptr) {
         if (current->data.getKey() == key) {
             std::cout << "Found song: " << key << std::endl;
@@ -124,6 +121,10 @@ int List<T>::removeSong() {
     std::cout << "Song not found: " << key << std::endl;
     return 0; // song not found
 }
+
+
+
+
 
 template<typename T>
 List<T>::~List() {

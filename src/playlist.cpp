@@ -26,8 +26,8 @@ void Playlist::setName(string name){
 void Playlist::addSong(Node<Music>*newMusic ) {
     this->data.add(newMusic);
 }
-void Playlist::removeSongFromPlaylist() {
-    this->data.removeSong();
+void Playlist::removeSongFromPlaylist(string key) {
+    this->data.removeSong(key);
 }
 
 

@@ -5,12 +5,9 @@
 #include "Music.h"
 #include "Node.h"
 #include "Playlist.h"
-#include "RemoveSongFromPlaylist.h"
+#include "RemoveSongFromAll.h"
  
 using namespace std;
-
-
-
 
 int main () {
     system("clear");
@@ -96,8 +93,8 @@ int main () {
             system("clear");
             cout<<"what song are you adding?"<<endl;
             getline(cin,auxString3);
-            auxString1= musicList.findItem(auxString3)->data.getKey();
-            auxString2 =musicList.findItem(auxString3)->data.getAuthor();
+            auxString1 = musicList.findItem(auxString3)->data.getKey();
+            auxString2 = musicList.findItem(auxString3)->data.getAuthor();
             Node <Music>* musicAux =  new Node<Music>({auxString1,auxString2});
             cout<<"what playlist are you adding "<<musicAux->data.getAuthor()<<" to?"<<endl;
             getline(cin,auxString3);
@@ -109,11 +106,9 @@ int main () {
             system("clear");
             musicList.~List();
             playlists.~List();
-            cout<<"all songs deleted"<<endl;
+            cout<<"all deleted"<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
-
-          
             menu=0;
         }
         
@@ -126,7 +121,6 @@ int main () {
             playlists.add(newPlaylist);
             cout << "Press any key to continue...";
             cin.ignore();
-            
             system("clear");
             menu = 0;
         };

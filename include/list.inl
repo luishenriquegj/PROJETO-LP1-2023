@@ -1,9 +1,7 @@
 /*!
-    List() é a estrutura de dados que armazena as musicsas e as playlists, deve ser inicializada sem argumentos, para sempre termos uma lista nova
+    List() é a estrutura de dados que armazena as musicas e as playlists, deve ser inicializada sem argumentos, para sempre termos uma lista nova
      
 */
-
-
 
 #include "List.h"
 #include "Node.h"
@@ -20,7 +18,7 @@ List<T>::List() {
 };
 
 /*!
-    add() é a função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
+    add() é uma função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
     para manter a  reusabilidade é imporante utilizar o nome dos atributios de maneira identica aos usados na classe Music.
      
 */
@@ -41,15 +39,16 @@ void List<T>::add(Node <T> *newNode) {
    
 }
 
-
-
-
+/*!
+    print() é uma função template responsavel por printar todos os elementos presentes em uma List;
+         
+*/
 
 template<typename T>
 void List<T>::print() {
     if(this->head == nullptr) {
-            std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
-            return;
+        std::cout<<"unable to display playlist, playlist is empty"<<std::endl;
+        return;
     }
     Node<T>* current = this->head;
     while (current != nullptr) {
@@ -60,10 +59,16 @@ void List<T>::print() {
     return;
 }
 
+/*!
+    findItem() é uma função template que recebe um elemento do tipo string e tem como finalidade 
+    identificar se o nome está correspondete ao nome playlist ou ao titulo de uma música por exemplo;
+         
+*/
+
 template<typename T>
 Node<T>* List<T>::findItem(std::string key) {
     if(this->head == nullptr) {
-        std::cout<<"unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
+        std::cout<<"Unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
         return nullptr;
     }
     Node<T>* current = this->head;
@@ -78,11 +83,16 @@ Node<T>* List<T>::findItem(std::string key) {
     return nullptr;
 }
 
+/*!
+    printItem() é uma função template responsavel por printar um elemento, podendo ele ser uma música, ou uma playlist;
+
+*/
+
 template<typename T>
 int List<T>::printItem() {
-     if(this->head == nullptr) {
-            std::cout<<"unable to display playlist, it might be empty or song name is wrong"<<std::endl;
-            return 0;
+    if(this->head == nullptr) {
+        std::cout<<"unable to display playlist, it might be empty or song name is wrong"<<std::endl;
+        return 0;
     }
     Node<T>* current = this->head;
     std::string key;
@@ -102,11 +112,17 @@ int List<T>::printItem() {
     return 0;
 }
 
+/*!
+    removeSong() é uma função template responsavel por apagar uma musica do sistema ;
+    Caso a função retorne 1, significa que ela está apagando a musica;
+    Caso a função retorne 0, significa que ela ou não encontrou a musica ou o sistema esta vazio
+*/
+
 template<typename T>
 int List<T>::removeSong(std::string key) {
     if(this->head== nullptr) {
-            std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
-            return 0;
+        std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
+        return 0;
     }
     Node<T>* current = this->head;
     Node<T>* previous = nullptr;
@@ -120,9 +136,9 @@ int List<T>::removeSong(std::string key) {
             } else {
                 // Remove non-first node
                 previous->next = current->next;
-               if (current->data.getKey() == this->tail->data.getKey()) {
+                if (current->data.getKey() == this->tail->data.getKey()) {
                     this->tail = previous;
-               }
+                }
 
             }
             delete current;
@@ -131,14 +147,14 @@ int List<T>::removeSong(std::string key) {
         previous = current;
         current = current->next;
     }
-
     std::cout << "Song not found: " << key << std::endl;
     return 0; // song not found
 }
 
+/*!
+    ~List() é uma destrutor responsavel por desalocar os elementos alocados na memória para essa lista;
 
-
-
+*/
 
 template<typename T>
 List<T>::~List() {
@@ -149,7 +165,5 @@ List<T>::~List() {
         delete aux;
     }
     this->head = nullptr;
-    
-
 }
 

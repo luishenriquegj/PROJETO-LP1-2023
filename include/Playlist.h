@@ -14,7 +14,6 @@ class Playlist {
     public:
         Playlist();
         Playlist(std::string name);
-        void setName(std::string name); 
         std::string getKey();
         void addSong(Node<Music>* newMusic );
         void removeSongFromPlaylist(std::string key);

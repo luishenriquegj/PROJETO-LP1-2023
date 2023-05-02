@@ -13,18 +13,18 @@ using namespace std;
 int main () {
     system("clear");
     int menu =0;
-    string auxString1,auxString2;
+    string auxString1,auxString2,auxString3;
     Music music;
     List<Music> musicList;
     Playlist p1 ;
     List<Playlist> playlists;
 
+    cout<<"WELCOME TO C0DEM4N"<<endl;
     while(menu !=9){
-        cout<<"WELCOME TO C0DEM4N"<<endl;
         cout<<"Main menu:"<<endl;
         cout<<"select an option:"<<endl;
         cout<<"1 - add new song to system"<<endl;
-        cout<<"2 - remove a song on system"<<endl;
+        cout<<"2 - remove a song from a playlist"<<endl;
         cout<<"3 - remove a song on system"<<endl;
         cout<<"4 - show all songs on system"<<endl;
         cout<<"5 - add a song to a playlsit"<<endl;
@@ -56,8 +56,9 @@ int main () {
 
         if(menu ==2) {
             system("clear");
-            //TODO: remover musica em uma playlsit
-            musicList.removeSong();
+            cout<<"which playlist are you look for?"<<endl;
+            getline(cin,auxString1);
+            playlists.findItem(auxString1)->data.removeSongFromPlaylist();
             cout << "Press any key to continue...";
             cin.ignore();
             menu = 0;
@@ -84,18 +85,20 @@ int main () {
         if(menu==5) {
             system("clear");
             cout<<"what song are you adding?"<<endl;
-            Node <Music>* musicAux = musicList.findItem();
+            getline(cin,auxString3);
+            auxString1= musicList.findItem(auxString3)->data.getKey();
+            auxString2 =musicList.findItem(auxString3)->data.getAuthor();
+            Node <Music>* musicAux =  new Node<Music>({auxString1,auxString2});
             cout<<"what playlist are you adding "<<musicAux->data.getAuthor()<<" to?"<<endl;
-            playlists.findItem()->data.addSong(musicAux);
-            cout<<"agora pesquisa pra printar"<<endl;
-            // playlists.findItem()->data.printPlaylistSongs();
+            getline(cin,auxString3);
+            playlists.findItem(auxString3)->data.addSong(musicAux);
             menu=0;
         }
         
         if(menu==6) {
             system("clear");
             musicList.~List();
-            cout<<"deletei tudo"<<endl;
+            cout<<"all songs deleted"<<endl;
             cout << "Press any key to continue...";
             cin.ignore();
 
@@ -118,7 +121,6 @@ int main () {
         
         if(menu ==8) {
             system("clear");
-            //TOO: Achar musica ou playlist
             cout<<playlists.print()<<endl;
             cout << "Press any key to continue...";
             cin.ignore();

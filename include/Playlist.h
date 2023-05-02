@@ -17,10 +17,16 @@ class Playlist {
         void setName(std::string name); 
         std::string getKey();
         void addSong(Node<Music>* newMusic );
+        void removeSongFromPlaylist();
         friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
         os << "Playlist Name: " << playlist.name << "\n";
-        return os;
+        Node<Music>* current = playlist.data.head;
+        while (current != nullptr) {
+            os << current->data.getKey() << "\n";
+            current = current->next;
         }
+        return os;
+    }
 
 };
 

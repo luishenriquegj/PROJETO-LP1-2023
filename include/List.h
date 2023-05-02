@@ -16,11 +16,9 @@ class List {
         //passa end memoria
         void add(Node<T> *newNode);
         int printItem();
-        Node<T>* findItem();
+        Node<T>* findItem(std::string key);
         int removeSong();
         ~List();
-        
-
 };
         #include"list.inl"
 

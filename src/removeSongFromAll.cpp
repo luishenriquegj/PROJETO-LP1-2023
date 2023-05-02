@@ -9,7 +9,7 @@ using namespace std;
 
 int removeSongFromAll(List<Playlist>& playlists,string key) {
     if (playlists.head == nullptr) {
-        cout << "ty" << endl;
+        cout << "Unable to remove song, playlist is already empty" << endl;
         return 0;
     }else{
         Node<Playlist>* currentPlaylist = playlists.head;
@@ -20,6 +20,7 @@ int removeSongFromAll(List<Playlist>& playlists,string key) {
             previousPlaylist = currentPlaylist;
             currentPlaylist = currentPlaylist->next;
         }
+        return 0;
     }
     cout << "Song not found: " << key << endl;
     return 0; // song not found

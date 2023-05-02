@@ -4,10 +4,12 @@
 #include "Music.h"
 
 using namespace std;
-
-/*!
-    Playlist() é uma função responsavel por inicilizar a playlist com seu nome vazio.
-    Existe uma sobrecarga para que posso ser inicializado também passando o nome da PLaylist;
+/**
+* @brief Construtor padrão da clase Playlist, a classe playlista é formada 
+* por uma string com o nome uma Lista de Musica chamada data.
+* é uma função responsavel por inicilizar a playlist com seu nome vazio.
+* Existe Uma sobrecarga do construtor Playlist para que ela possa ser inicializado também passando o nome da PLaylist.
+* @param name é o nome da Playlist.
 */
 
 Playlist::Playlist(){
@@ -17,28 +19,27 @@ Playlist::Playlist(){
 Playlist::Playlist(string name){
     this->name = name;
 }
-
-/*!
-    getKey() é uma função responsavel pegar o elemento nome da Playlist
-    Essa função retorna o nome da playlist;
+/**
+* @brief getKey() é uma função responsavel pegar o elemento nome da Playlist
+* @return Essa função retorna o nome da playlist;
 */
 
 string Playlist::getKey(){
     return this->name;
 };
-/*!
-    addSong() é uma função responsavel por adicionar uma música a uma playlist, essa função recebe como parâmetro um Node do tipo Musica
-    e adiciona esse Node a uma Lista de playlist;
-    
+
+/**
+* @brief addSong() é uma função responsavel por adicionar um Node Musica a uma Lista de Playlist.
+* @param Node<Musica>* newMusic
 */
 void Playlist::addSong(Node<Music>*newMusic ) {
     this->data.add(newMusic);
 }
-/*!
-    RemoveSongFromPlayList() é uma função responsavel por remover uma música de uma playlist, essa função recebe como parâmetro uma string
-    com o nome da musica 
-    e adiciona esse Node a uma Lista de playlist;
-    
+
+/**
+* @brief RemoveSongFromPlayList() é uma função responsavel por remover uma música de uma playlist, 
+* recebendo uma string com o nome da musica, para conseguir remover essa música das playlists
+* @param string key.
 */
 void Playlist::removeSongFromPlaylist(string key) {
     this->data.removeSong(key);

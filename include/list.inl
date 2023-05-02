@@ -1,6 +1,6 @@
 /*!
-    List() é a estrutura de dados que armazena as musicas e as playlists, deve ser inicializada sem argumentos, para sempre termos uma lista nova
-     
+    List() é a estrutura de dados que armazena as musicas e as playlists, 
+    *deve ser inicializada sem argumentos, para sempre termos uma lista nova
 */
 
 #include "List.h"
@@ -17,9 +17,11 @@ List<T>::List() {
     this->tail = nullptr;
 };
 
-/*!
-    add() é uma função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
-    para manter a  reusabilidade é imporante utilizar o nome dos atributios de maneira identica aos usados na classe Music.
+/**
+* @brief add() é uma função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
+* para manter a  reusabilidade é imporante utilizar o nome dos atributios de maneira identica aos usados na classe Music.
+* @param Node<T> *newNode
+
      
 */
 template <typename T>
@@ -39,9 +41,8 @@ void List<T>::add(Node <T> *newNode) {
    
 }
 
-/*!
-    print() é uma função template responsavel por printar todos os elementos presentes em uma List;
-         
+/**
+* @brief print() é uma função template responsavel por printar todos os elementos presentes em uma List;    
 */
 
 template<typename T>
@@ -59,10 +60,9 @@ void List<T>::print() {
     return;
 }
 
-/*!
-    findItem() é uma função template que recebe um elemento do tipo string e tem como finalidade 
-    identificar se o nome está correspondete ao nome playlist ou ao titulo de uma música por exemplo;
-         
+/**
+* @brief findItem() é uma função template que recebe um elemento do tipo string e tem como finalidade 
+* identificar se o nome está correspondete ao nome playlist ou ao titulo de uma música por exemplo;    
 */
 
 template<typename T>
@@ -83,9 +83,9 @@ Node<T>* List<T>::findItem(std::string key) {
     return nullptr;
 }
 
-/*!
-    printItem() é uma função template responsavel por printar um elemento, podendo ele ser uma música, ou uma playlist;
-
+/**
+* @brief printItem() é uma função template responsavel por printar um elemento, 
+* podendo ele ser uma música, ou uma playlist;
 */
 
 template<typename T>
@@ -112,10 +112,10 @@ int List<T>::printItem() {
     return 0;
 }
 
-/*!
-    removeSong() é uma função template responsavel por apagar uma musica do sistema ;
-    Caso a função retorne 1, significa que ela está apagando a musica;
-    Caso a função retorne 0, significa que ela ou não encontrou a musica ou o sistema esta vazio
+/**
+* @brief removeSong() é uma função template responsavel por apagar uma musica do sistema.
+* @return retorne 1, significa que ela está apagando a musica;
+* @return retorne 0, significa que ela ou não encontrou a musica ou o sistema esta vazio
 */
 
 template<typename T>

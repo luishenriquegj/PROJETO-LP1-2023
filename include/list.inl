@@ -1,3 +1,10 @@
+/*!
+    List() é a estrutura de dados que armazena as musicsas e as playlists, deve ser inicializada sem argumentos, para sempre termos uma lista nova
+     
+*/
+
+
+
 #include "List.h"
 #include "Node.h"
 #include <unistd.h>
@@ -12,6 +19,11 @@ List<T>::List() {
     this->tail = nullptr;
 };
 
+/*!
+    add() é a função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
+    para manter a  reusabilidade é imporante utilizar o nome dos atributios de maneira identica aos usados na classe Music.
+     
+*/
 template <typename T>
 void List<T>::add(Node <T> *newNode) { 
     if ( this->head == nullptr) {
@@ -28,6 +40,8 @@ void List<T>::add(Node <T> *newNode) {
     }
    
 }
+
+
 
 
 

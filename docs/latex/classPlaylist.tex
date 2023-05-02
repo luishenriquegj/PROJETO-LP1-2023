@@ -1,0 +1,45 @@
+\hypertarget{classPlaylist}{}\doxysection{Referência da Classe Playlist}
+\label{classPlaylist}\index{Playlist@{Playlist}}
+
+
+Diagrama de colaboração para Playlist\+:
+% FIG 0
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_adf45316c0031721406e101b5c822f089}\label{classPlaylist_adf45316c0031721406e101b5c822f089}} 
+{\bfseries Playlist} (std\+::string name)
+\item 
+\mbox{\Hypertarget{classPlaylist_a80a5b1b3f387b1e3b21b564b1e405619}\label{classPlaylist_a80a5b1b3f387b1e3b21b564b1e405619}} 
+void {\bfseries set\+Name} (std\+::string name)
+\item 
+\mbox{\Hypertarget{classPlaylist_a267a1b484b2fc3dc6f4a7f65db05822c}\label{classPlaylist_a267a1b484b2fc3dc6f4a7f65db05822c}} 
+std\+::string {\bfseries get\+Key} ()
+\item 
+\mbox{\Hypertarget{classPlaylist_a6c9523f8fe01f42fe789dd3253b3eb4b}\label{classPlaylist_a6c9523f8fe01f42fe789dd3253b3eb4b}} 
+void {\bfseries add\+Song} (\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classMusic}{Music}} $>$ $\ast$new\+Music)
+\item 
+\mbox{\Hypertarget{classPlaylist_ad100920ee6366b94b70c235299530f92}\label{classPlaylist_ad100920ee6366b94b70c235299530f92}} 
+void {\bfseries remove\+Song\+From\+Playlist} (std\+::string key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_a6b06305db2f4b7bfadccd994665501cf}\label{classPlaylist_a6b06305db2f4b7bfadccd994665501cf}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{classPlaylist_a31a0741dc637a08ab6624ff1b91ea1b0}\label{classPlaylist_a31a0741dc637a08ab6624ff1b91ea1b0}} 
+\mbox{\hyperlink{classList}{List}}$<$ \mbox{\hyperlink{classMusic}{Music}} $>$ {\bfseries data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_a1cf351869eac1cbad97d6ac7e1235612}\label{classPlaylist_a1cf351869eac1cbad97d6ac7e1235612}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classPlaylist}{Playlist}} \&playlist)
+\end{DoxyCompactItemize}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Playlist.\+h\item 
+src/playlist.\+cpp\end{DoxyCompactItemize}

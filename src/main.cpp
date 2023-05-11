@@ -59,7 +59,9 @@ int main () {
             system("clear");
             cout<<"which playlist are you look for?"<<endl;
             getline(cin,auxString1);
-            playlists.findItem(auxString1)->data.removeSongFromPlaylist(auxString1);
+            cout<<"wich song you want to remove"<<endl;
+            getline(cin,auxString2);
+            playlists.findItem(auxString1)->data.removeSongFromPlaylist(auxString2);
             cout << "Press any key to continue...";
             cin.ignore();
             menu = 0;

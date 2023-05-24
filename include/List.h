@@ -15,9 +15,11 @@ class List {
         void print();
         //passa end memoria
         void add(Node<T> *newNode);
+        void add(List<T> *newList);
         int printItem();
         Node<T>* findItem(std::string key);
         int removeSong(std::string key);
+        
         ~List();
 };
         #include"list.inl"

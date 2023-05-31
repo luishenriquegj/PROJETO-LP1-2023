@@ -122,13 +122,13 @@ int List<T>::printItem() {
 }
 
 /**
-* @brief removeSong() é uma função template responsavel por apagar uma musica do sistema.
+* @brief removeItem() é uma função template responsavel por apagar uma musica do sistema.
 * @return retorne 1, significa que ela está apagando a musica;
 * @return retorne 0, significa que ela ou não encontrou a musica ou o sistema esta vazio
 */
 
 template<typename T>
-int List<T>::removeSong(std::string key) {
+int List<T>::removeItem(std::string key) {
     if(this->head== nullptr) {
         std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
         return 0;

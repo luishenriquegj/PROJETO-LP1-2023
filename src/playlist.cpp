@@ -14,10 +14,12 @@ using namespace std;
 
 Playlist::Playlist(){
     this->name = "";
+    this->size = 0;
 }
 
 Playlist::Playlist(string name){
     this->name = name;
+    this->size = 1;
 }
 /**
 * @brief getKey() é uma função responsavel pegar o elemento nome da Playlist
@@ -34,6 +36,7 @@ string Playlist::getKey(){
 */
 void Playlist::addSong(Node<Music>*newMusic ) {
     this->data.add(newMusic);
+    this ->size +=1;
 }
 
 /**
@@ -42,7 +45,12 @@ void Playlist::addSong(Node<Music>*newMusic ) {
 * @param string key.
 */
 void Playlist::removeSongFromPlaylist(string key) {
-    this->data.removeSong(key);
+    if(this->size > 0){
+        this->data.removeItem(key);
+        this->size -=1;
+    }else {
+        cout<<"unable to remove a song from an empty playlist"<<endl;
+    }
 }
 
 

@@ -18,10 +18,10 @@ class Music {
         void setAuthor(std::string author);
 
         friend std::ostream& operator<<(std::ostream& os, const Music& music) {
-        os << "Title: " << music.title << "\n";
-        os << "Artist: " << music.author << "\n";
-        return os;
-    }
+            os << "Title: " << music.title << "\n";
+            os << "Artist: " << music.author << "\n";
+            return os;
+        }
 };
 
 

@@ -18,7 +18,7 @@ class List {
         void add(List<T> *newList);
         int printItem();
         Node<T>* findItem(std::string key);
-        int removeSong(std::string key);
+        int removeItem(std::string key);
         
         ~List();
 };

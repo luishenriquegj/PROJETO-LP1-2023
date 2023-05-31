@@ -9,6 +9,7 @@ class Playlist {
 
     private:
         std::string name;
+        int size;
         List <Music> data;
     public:
         Playlist();
@@ -17,16 +18,15 @@ class Playlist {
         void addSong(Node<Music>* newMusic );
         void removeSongFromPlaylist(std::string key);
         friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
-        os << "Playlist Name: " << playlist.name << "\n";
-        Node<Music>* current = playlist.data.head;
-        os << "musics:" << "\n";
-        while (current != nullptr) {
-            os << current->data.getKey() << "\n";
-            current = current->next;
+            os << "Playlist Name: " << playlist.name << "\n";
+            Node<Music>* current = playlist.data.head;
+            os << "musics:" << "\n";
+            while (current != nullptr) {
+                os << current->data.getKey() << "\n";
+                current = current->next;
+            }
+            return os;
         }
-        return os;
-    }
-
 };
 
 

@@ -107,7 +107,7 @@ int main () {
             //remove musica de todas as playlsit e do sistema
             cout<<"what song do you wish to remove from the database?"<<endl;
             getline(cin,auxString1);
-            musicList.removeSong(auxString1);
+            musicList.removeItem(auxString1);
             removeSongFromAll(playlists,auxString1);
             cout << "Press any key to continue...";
             cin.ignore();

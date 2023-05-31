@@ -21,6 +21,34 @@ class List {
         int removeItem(std::string key);
         
         ~List();
+
+        void operator>>(Node<T>* node) {
+                if(head==nullptr){
+                        node = nullptr;
+                }
+                else{
+                        Node<T>* current = head;
+                        while(current->next != nullptr){
+                                current = current->next;
+                        }
+                        node->data= current->data;
+                        node->next = nullptr;
+
+                }
+        }
+        void operator<<(Node<T>* node) {
+                if(node == nullptr){
+                        return;
+                }
+                if(head->next!=nullptr){
+                        Node<T>* current = head;
+                        while(current->next != nullptr){
+                                current = current->next;
+                        }
+                }else{
+                        head->next = node;
+                }
+        }
 };
         #include"list.inl"
 

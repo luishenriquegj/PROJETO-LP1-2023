@@ -15,8 +15,18 @@ void addNewSong(List<Music>& musicList) {
     string title, author;
     cout << "Set music title: ";
     getline(cin, title);
+    while(title.size() ==0) {
+        cout << "A music must have a title"<<endl;
+        cout << "set music title:"<<endl;
+        getline(cin, title);
+    }
     cout << "Set music author: ";
     getline(cin, author);
+    while(author.size() ==0) {
+        cout << "A music must have a author name"<<endl;
+        cout << "set music author name:"<<endl;
+        getline(cin, author);
+    }
     Node<Music>* newNode = new Node<Music>({ title, author });
 
     cout << "\n\033[1m\033[34m" << newNode->data.getKey() << "\033[0m was added successfully." << endl;
@@ -134,6 +144,11 @@ void createNewPlaylist(List<Playlist>& playlists) {
     string playlistName;
     cout << "Set playlist name: ";
     getline(cin, playlistName);
+    while(playlistName.size() == 0){
+        cout << "can't create a playlist without a name: "<< endl;
+        cout << "choose a name for it: "<< endl;
+        getline(cin, playlistName);
+    }
     Node<Playlist>* newPlaylist = new Node<Playlist>(playlistName);
     playlists.add(newPlaylist);
     cout << "Press any key to continue...";

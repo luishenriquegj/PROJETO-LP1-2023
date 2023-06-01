@@ -8,4 +8,5 @@ add_executable (program
   src/music.cpp
   src/playlist.cpp
   src/removeSongFromAll.cpp
+  src/system.cpp
 )

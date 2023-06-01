@@ -9,8 +9,8 @@ class Playlist {
 
     private:
         std::string name;
-        int size;
         List <Music> data;
+        int size;
     public:
         Playlist();
         Playlist(std::string name);

@@ -77,7 +77,6 @@ void List<T>::print() {
 template<typename T>
 Node<T>* List<T>::findItem(std::string key) {
     if(this->head == nullptr) {
-        std::cout<<"Unable to get playlist/song, playlist be empty or song name was misspelled"<<std::endl;
         return nullptr;
     }
     Node<T>* current = this->head;

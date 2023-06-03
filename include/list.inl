@@ -39,7 +39,7 @@ void List<T>::add(Node <T> *newNode) {
        
     }
    
-}
+};
 template <typename T>
 void List<T>::add(List<T> *newList){
     Node<T>* current = newList->head;
@@ -48,7 +48,7 @@ void List<T>::add(List<T> *newList){
         this->add(current);
         current = current->next;
     }
-}
+};
 
 /**
 * @brief print() é uma função template responsavel por printar todos os elementos presentes em uma List;    

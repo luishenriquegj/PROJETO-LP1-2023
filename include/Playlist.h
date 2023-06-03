@@ -5,11 +5,11 @@
 #include <string>
 #include <iostream>
 
-class Playlist {  
+class Playlist {
 
     private:
         std::string name;
-        List<Music> data;
+        List <Music> data;
         int size;
     public:
         Playlist();

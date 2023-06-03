@@ -69,9 +69,9 @@ void addNewList(List<Music>& musicList) {
 }
 
 void concatenateLists(List<Music>&musicList,List<Music>&secondList){
-    List<Music> newList;
+    List<Music>* newList;
     newList = musicList + secondList;
-    newList.print(); 
+    newList->print(); 
 
 };
 

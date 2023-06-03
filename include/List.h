@@ -2,12 +2,11 @@
 #define LIST_H
 
 #include "Node.h"
-#include "Playlist.h"
 #include <string>
 
 template <typename T> 
 
-class List {    
+class List {
     public:
         Node<T>* head;
         Node<T>* tail;
@@ -19,12 +18,12 @@ class List {
         int printItem();
         Node<T>* findItem(std::string key);
         int removeItem(std::string key);
-        
+
         ~List();
-        
-        List<T> operator+(List<T> &secondlist) {
+
+        List<T>* operator+(List<T> &secondlist) {
                 Node<T>* current = head;
-                List<T>* newList;
+                List<T>* newList = new List<T>();
                 while(current!=nullptr){
                         newList->add(current);
                         current = current->next;
@@ -38,7 +37,7 @@ class List {
                 return newList;
         }
 
-        void operator>>(Node<T>* node) {
+        void operator>>(Node<T> *node) {
                 if(head==nullptr){
                         node = nullptr;
                 }

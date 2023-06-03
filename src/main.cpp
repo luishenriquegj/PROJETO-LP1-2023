@@ -17,7 +17,7 @@ int main() {
     List<Playlist> playlists;
 
     cout << "WELCOME TO C0DEM4N" << endl;
-    while (menu != 10) {
+    while (menu != 12) {
         cout << "Main menu:" << endl;
         cout << "Select an option:" << endl;
         cout << "1 - Add new song to Main List" << endl;

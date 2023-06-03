@@ -137,7 +137,28 @@ void addSongToPlaylist(List<Music>& musicList, List<Playlist>& playlists) {
     }
     system("clear");
 }
-
+void addPlaylistToPlaylist(List<Playlist>& playlists) {
+    string playlistName1, playlistName2;
+    cout << "What playlist you want to add to another playlist? ";
+    getline(cin, playlistName1);
+    cout << "What playlist you want to add to another playlist? ";
+    getline(cin, playlistName2);
+    Node<Playlist>* playlistNode1 = playlists.findItem(playlistName1);
+    Node<Playlist>* playlistNode2 = playlists.findItem(playlistName2);
+    if (playlistNode1 != nullptr) {
+        playlistNode1->data.addSong(playlistNode2->data);
+        cout << "Song added to the playlist successfully." << endl;
+        cout<<playlistNode1->data<<endl;
+        cout << "Press any key to continue...";
+        cin.ignore();
+    } else {
+        cout << "Playlist not found. Song couldn't be added." << endl;
+        cout << "Press any key to continue...";
+        cin.ignore();
+    }
+    
+    system("clear");
+}
 void destructLists(List<Music>& musicList, List<Playlist>& playlists) {
     system("clear");
     musicList.~List();

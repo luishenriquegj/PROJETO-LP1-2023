@@ -21,6 +21,22 @@ class List {
         int removeItem(std::string key);
         
         ~List();
+        
+        List<T> operator+(List<T> &secondlist) {
+                Node<T>* current = head;
+                List<T>* newList;
+                while(current!=nullptr){
+                        newList->add(current);
+                        current = current->next;
+                }
+                current = secondlist.head;
+                while(current!=nullptr){
+                        newList->add(current);
+                        current = current->next;
+                }
+
+                return newList;
+        }
 
         void operator>>(Node<T>* node) {
                 if(head==nullptr){

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <string>
 #include "Music.h"
+#include "List.h"
 #include "Node.h"
 #include "Playlist.h"
 #include "RemoveSongFromAll.h"
@@ -61,10 +62,18 @@ void addNewList(List<Music>& musicList) {
     }
 
     musicList.add(newList);
+
     cout << "Press any key to continue...";
     cin.ignore();
     system("clear");
 }
+
+void concatenateLists(List<Music>&musicList,List<Music>&secondList){
+    List<Music> newList;
+    newList = musicList + secondList;
+    newList.print(); 
+
+};
 
 void removeSongFromPlaylist(List<Playlist>& playlists) {
     system("clear");

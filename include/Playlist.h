@@ -9,7 +9,7 @@ class Playlist {
 
     private:
         std::string name;
-        List <Music> data;
+        List<Music> data;
         int size;
     public:
         Playlist();

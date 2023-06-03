@@ -18,6 +18,7 @@ class List {
         int printItem();
         Node<T>* findItem(std::string key);
         int removeItem(std::string key);
+        int removeItem(List<T>& musicList);
 
         ~List();
 
@@ -51,6 +52,7 @@ class List {
 
                 }
         }
+       
         void operator<<(Node<T>* node) {
                 if(node == nullptr){
                         return;

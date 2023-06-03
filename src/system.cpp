@@ -11,6 +11,24 @@
 
 using namespace std;
 
+void populateSystem(List<Music>& musicList){
+    Node<Music>* newNode1 = new Node<Music>({ "music 1", "author1" });
+    Node<Music>* newNode2 = new Node<Music>({ "music 2", "author2" });
+    Node<Music>* newNode3 = new Node<Music>({ "music 3", "author3" });
+    Node<Music>* newNode4 = new Node<Music>({ "music 4", "author4" });
+    Node<Music>* newNode5 = new Node<Music>({ "music 5", "author5" });
+    musicList.add(newNode1);
+    musicList.add(newNode2);
+    musicList.add(newNode3);
+    musicList.add(newNode4);
+    musicList.add(newNode5);
+    cout<<"system pre-populated with the following musics:"<<endl;
+    musicList.print();
+    cout << "Press any key to continue...";
+    cin.ignore();
+    system("clear");
+}
+
 void addNewSong(List<Music>& musicList) {
     system("clear");
     string title, author;
@@ -172,3 +190,4 @@ void findPlaylist(List<Playlist>& playlists) {
     cin.ignore();
     system("clear");
 }
+

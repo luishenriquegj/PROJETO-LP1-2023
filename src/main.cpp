@@ -15,6 +15,9 @@ int main() {
     int menu = 0;
     List<Music> musicList,secondList, newList;
     List<Playlist> playlists;
+    populateSystem(musicList);
+    populateSystem(secondList);
+    
 
     cout << "WELCOME TO C0DEM4N" << endl;
     while (menu != 12) {
@@ -56,6 +59,7 @@ int main() {
                 break;
             case 7:
                 showAllSongs(musicList);
+                musicList.removeItem(secondList);
                 break;
             case 8:
                 addSongToPlaylist(musicList, playlists);
@@ -70,6 +74,9 @@ int main() {
                 findPlaylist(playlists);
                 break;
             case 12:
+                system("clear");
+                cout << "Exiting C0DEM4N...." << endl;
+            case 13:
                 system("clear");
                 cout << "Exiting C0DEM4N...." << endl;
                 return 0;

@@ -159,6 +159,53 @@ int List<T>::removeItem(std::string key) {
     return 0; // song not found
 }
 
+template<typename T>
+int List<T>::removeItem(List<T>& musicList) {
+    
+    if(this->head== nullptr) {
+        std::cout<<"unable to remove song, playlist is already empty"<<std::endl;
+        return 0;
+    }
+
+    Node<T>* current = this->head;
+    Node<T>* previous = nullptr;
+    Node<T>* currentMusicList = musicList.head;
+    int count =0;
+    
+    
+    while (currentMusicList != nullptr) {
+        if (current->data.getKey() == currentMusicList->data.getKey()) {
+            count++;
+            std::cout << "Found song: " << current->data.getKey() << std::endl;
+            
+            if (current == this->head) {
+                // Remove first node
+                this->head = current->next;
+            } else {
+                // Remove non-first node
+                previous->next = current->next;
+                //updates the tail
+                if (current->data.getKey() == this->tail->data.getKey()) {
+                    this->tail = previous;
+                }
+
+            }
+            delete current;
+        }
+        if (current == this->tail) {
+                // Remove first node
+               currentMusicList = currentMusicList->next;
+               current = this->head;
+               previous = nullptr;
+        }else{
+            previous = current;
+            current = current->next;
+        }
+    }
+    std::cout<<"removed a total of "<< count<< " musics" <<endl;
+    return 0; 
+}
+
 /*!
     ~List() é uma destrutor responsavel por desalocar os elementos alocados na memória para essa lista;
 

@@ -8,6 +8,7 @@
 #include "List.h"
 #include "Playlist.h"
 
+void populateSystem(List<Music>& musicList);
 void addNewSong(List<Music>& musicList);
 void addNewList(List<Music>& musicList);
 void concatenateLists(List<Music>&musicList,List<Music>&secondList);
@@ -18,7 +19,6 @@ void addSongToPlaylist(List<Music>& musicList, List<Playlist>& playlists);
 void destructLists(List<Music>& musicList, List<Playlist>& playlists);
 void createNewPlaylist(List<Playlist>& playlists);
 void findPlaylist(List<Playlist>& playlists);
-
 
 
 #endif

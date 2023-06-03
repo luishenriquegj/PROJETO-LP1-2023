@@ -20,7 +20,7 @@ int main() {
     
 
     cout << "WELCOME TO C0DEM4N" << endl;
-    while (menu != 12) {
+    while (menu != 15) {
         cout << "Main menu:" << endl;
         cout << "Select an option:" << endl;
         cout << "1 - Add new song to Main List" << endl;
@@ -35,6 +35,7 @@ int main() {
         cout << "10 - Create a new playlist" << endl;
         cout << "11 - Find a playlist" << endl;
         cout << "12 - Exit program" << endl;
+        cout << "14 - add playlist to playlist" << endl;
         cin >> menu;
         cin.ignore();
 
@@ -80,6 +81,9 @@ int main() {
                 system("clear");
                 cout << "Exiting C0DEM4N...." << endl;
                 return 0;
+            case 14:
+                addPlaylistToPlaylist(playlists);
+                break;
             default:
                 system("clear");
                 cout << "Invalid option. Please try again." << endl;

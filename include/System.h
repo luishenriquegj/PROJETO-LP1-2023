@@ -19,6 +19,7 @@ void addSongToPlaylist(List<Music>& musicList, List<Playlist>& playlists);
 void destructLists(List<Music>& musicList, List<Playlist>& playlists);
 void createNewPlaylist(List<Playlist>& playlists);
 void findPlaylist(List<Playlist>& playlists);
+void addPlaylistToPlaylist(List<Playlist>& playlists);
 
 
 #endif

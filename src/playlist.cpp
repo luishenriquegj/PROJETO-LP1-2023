@@ -36,7 +36,19 @@ string Playlist::getKey(){
 */
 void Playlist::addSong(Node<Music>*newMusic ) {
     this->data.add(newMusic);
-    this ->size +=1;
+    this->size +=1;
+}
+
+void Playlist::addSong(Playlist&playlistTeste) {
+    Node<Music>* current = this->data.tail;
+    Node<Music>* aux = playlistTeste.data.head;
+    while(aux->next!=nullptr){
+        current->next = aux;
+        aux = aux->next;
+        this->size +=1;
+    }
+    
+    this->data.tail = playlistTeste.data.tail;
 }
 
 /**

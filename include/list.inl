@@ -202,7 +202,7 @@ int List<T>::removeItem(List<T>& musicList) {
             current = current->next;
         }
     }
-    std::cout<<"removed a total of "<< count<< " musics" <<endl;
+    std::cout<<"removed a total of "<< count<< " musics" <<std::endl;
     return 0; 
 }
 

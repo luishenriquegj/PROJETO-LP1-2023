@@ -34,8 +34,8 @@ int main() {
         cout << "9 - Destruct lists" << endl;
         cout << "10 - Create a new playlist" << endl;
         cout << "11 - Find a playlist" << endl;
-        cout << "12 - Exit program" << endl;
-        cout << "14 - add playlist to playlist" << endl;
+        cout << "12 - add playlist to playlist" << endl;
+        cout << "13 - Exit program" << endl;
         cin >> menu;
         cin.ignore();
 
@@ -75,14 +75,12 @@ int main() {
                 findPlaylist(playlists);
                 break;
             case 12:
-                system("clear");
-                cout << "Exiting C0DEM4N...." << endl;
+                 addPlaylistToPlaylist(playlists);
+                break;
             case 13:
                 system("clear");
                 cout << "Exiting C0DEM4N...." << endl;
                 return 0;
-            case 14:
-                addPlaylistToPlaylist(playlists);
                 break;
             default:
                 system("clear");

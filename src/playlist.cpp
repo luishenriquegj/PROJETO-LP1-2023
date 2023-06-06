@@ -39,17 +39,19 @@ void Playlist::addSong(Node<Music>*newMusic ) {
     this->size +=1;
 }
 
-void Playlist::addSong(Playlist&playlistTeste) {
+void Playlist::addSong(Playlist&playlist) {
     Node<Music>* current = this->data.tail;
-    Node<Music>* aux = playlistTeste.data.head;
+    Node<Music>* aux = playlist.data.head;
     while(aux->next!=nullptr){
         current->next = aux;
         aux = aux->next;
         this->size +=1;
     }
     
-    this->data.tail = playlistTeste.data.tail;
+    this->data.tail = playlist.data.tail;
 }
+
+
 
 /**
 * @brief RemoveSongFromPlayList() é uma função responsavel por remover uma música de uma playlist, 

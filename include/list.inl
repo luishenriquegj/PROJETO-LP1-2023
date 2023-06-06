@@ -40,6 +40,7 @@ void List<T>::add(Node <T> *newNode) {
     }
    
 };
+
 template <typename T>
 void List<T>::add(List<T> *newList){
     Node<T>* current = newList->head;
@@ -160,7 +161,7 @@ int List<T>::removeItem(std::string key) {
 }
 
 template<typename T>
-int List<T>::removeItem(List<T>& musicList) {
+int List<T>::removeItem(List<T> &musicList) {
     
     if(this->head== nullptr) {
         std::cout<<"unable to remove song, playlist is already empty"<<std::endl;

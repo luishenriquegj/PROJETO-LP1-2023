@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int removeSongFromAll(List<Playlist>& playlists,string key) {
+int removeSongFromAll(List<Playlist> &playlists,string key) {
     if (playlists.head == nullptr) {
         cout << "Unable to remove song, playlist is already empty" << endl;
         return 0;

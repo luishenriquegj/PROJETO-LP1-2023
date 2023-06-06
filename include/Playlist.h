@@ -9,14 +9,14 @@ class Playlist {
 
     private:
         std::string name;
-        List <Music> data;
         int size;
     public:
+        List <Music> data;
         Playlist();
         Playlist(std::string name);
         std::string getKey();
-        void addSong(Node<Music>* newMusic );
-        void addSong(Playlist&playlistTeste);
+        void addSong(Node<Music>* Music );
+        void addSong(Playlist&playlist);
         void removeSongFromPlaylist(std::string key);
         friend std::ostream& operator<<(std::ostream& os, const Playlist& playlist) {
             os << "Playlist Name: " << playlist.name << "\n";

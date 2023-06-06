@@ -7,7 +7,8 @@ using namespace std;
 */
 
 Music::Music(){
-    
+    this-> title = "";
+    this-> author = "";
 }
 /**
 * @brief Construtor sobrecarregado da clase Music()
@@ -41,7 +42,7 @@ string Music::getKey(){
 */
 
 void Music::setTitle(string title){
-    this->title=title;
+    this->title = title;
 }
 /**
 * @brief getAuthor()) é uma função responsável por retornar o nome do autor pois esse atributo 
@@ -50,7 +51,7 @@ void Music::setTitle(string title){
 */
 
 string Music::getAuthor(){
-    return this-> author = author;
+    return this->author;
 }
 /**
 * @brief setAuthor() é uma função responsável por definir o nome da música, nesse caso o nome do autor, pois o 
@@ -60,5 +61,5 @@ string Music::getAuthor(){
 */
 
 void Music::setAuthor(string author){
-    this->author=author;
+    this->author = author;
 }

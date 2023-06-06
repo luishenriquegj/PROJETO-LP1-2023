@@ -15,6 +15,7 @@ class Music {
         std::string getKey();
         void setTitle(std::string title);
         std::string getAuthor();
+        void setAllData(Music& music);
         void setAuthor(std::string author);
 
         friend std::ostream& operator<<(std::ostream& os, const Music& music) {

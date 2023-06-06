@@ -13,10 +13,10 @@ using namespace std;
 int main() {
     system("clear");
     int menu = 0;
-    List<Music> musicList,secondList, newList;
+    List<Music> musicList;
     List<Playlist> playlists;
     populateSystem(musicList);
-    populateSystem(secondList);
+    populateSystem(playlists);
     
 
     cout << "WELCOME TO C0DEM4N" << endl;
@@ -24,7 +24,7 @@ int main() {
         cout << "Main menu:" << endl;
         cout << "Select an option:" << endl;
         cout << "1 - Add new song to Main List" << endl;
-        cout << "2 - Add new song to second List" << endl;
+        cout << "2 - empty menu" << endl;
         cout << "3 - Concatenate lists" << endl;
         cout << "4 - Add new list to a list" << endl;
         cout << "5 - Remove a song from a playlist" << endl;
@@ -35,19 +35,19 @@ int main() {
         cout << "10 - Create a new playlist" << endl;
         cout << "11 - Find a playlist" << endl;
         cout << "12 - add playlist to playlist" << endl;
-        cout << "13 - Exit program" << endl;
+        cout << "13 - test menu" << endl;
+        cout << "14 - Exit program" << endl;
         cin >> menu;
         cin.ignore();
 
         switch (menu) {
             case 1:
                 addNewSong(musicList);
-                break;
+                break; 
             case 2:
-                addNewSong(secondList);
                 break;
             case 3:
-                concatenateLists(musicList,secondList);
+                uniteLists(musicList,playlists);
                 break;
             case 4:
                 addNewList(musicList);
@@ -60,7 +60,6 @@ int main() {
                 break;
             case 7:
                 showAllSongs(musicList);
-                musicList.removeItem(secondList);
                 break;
             case 8:
                 addSongToPlaylist(musicList, playlists);
@@ -78,6 +77,9 @@ int main() {
                  addPlaylistToPlaylist(playlists);
                 break;
             case 13:
+                testMenu(musicList);
+                break;
+            case 14:
                 system("clear");
                 cout << "Exiting C0DEM4N...." << endl;
                 return 0;

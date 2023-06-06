@@ -11,10 +11,27 @@
 #include <iostream>
 #include <cstdlib>
 
+/**
+* @brief List() é um construtor padrao, responsavel por instanciar uma nova lista sem valores atribuidos.
+
+*/
+
 template <typename T>
 List<T>::List() {
     this->head = nullptr;
     this->tail = nullptr;
+};
+
+/**
+* @brief List(List<T> *listToCopy) é um construtor copia, responsavel por instanciar uma nova lista copiando os valores de outra.
+* @param List<T> *listToCopy
+
+*/
+
+template <typename T>
+List<T>::List(List<T> *listToCopy) {
+    this->head = listToCopy->head;
+    this->tail = listToCopy->tail;
 };
 
 /**

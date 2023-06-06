@@ -12,6 +12,12 @@ using namespace std;
 * @param name é o nome da Playlist.
 */
 
+Playlist::Playlist(Playlist *playlistToCopy){
+    this->name = playlistToCopy->name;
+    this->size = playlistToCopy->size;
+    this->data = playlistToCopy->data;
+}
+
 Playlist::Playlist(){
     this->name = "";
     this->size = 0;

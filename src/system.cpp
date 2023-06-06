@@ -29,6 +29,7 @@ void populateSystem(List<Music> &musicList){
     cin.ignore();
     system("clear");
 }
+
 void populateSystem(List<Playlist> &playlistList){
     string playlistName1 = "playlist 1";
     string playlistName2 = "playlist 2";
@@ -259,6 +260,7 @@ void addPlaylistToPlaylist(List<Playlist> &playlists) {
     
     system("clear");
 }
+
 void destructLists(List<Music>& musicList, List<Playlist>& playlists) {
     system("clear");
     musicList.~List();

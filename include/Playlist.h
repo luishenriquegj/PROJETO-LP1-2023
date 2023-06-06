@@ -12,6 +12,7 @@ class Playlist {
         int size;
     public:
         List <Music> data;
+        Playlist(Playlist *playlistToCopy);
         Playlist();
         Playlist(std::string name);
         std::string getKey();

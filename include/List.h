@@ -11,6 +11,7 @@ class List {
         Node<T>* head;
         Node<T>* tail;
         List();
+        List( List <T> *listToCopy);
         void print();
         //passa end memoria
         void add(Node<T> *newNode);

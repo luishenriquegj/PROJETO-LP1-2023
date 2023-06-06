@@ -12,6 +12,7 @@ using namespace std;
 * @param name é o nome da Playlist.
 */
 
+
 Playlist::Playlist(Playlist *playlistToCopy){
     this->name = playlistToCopy->name;
     this->size = playlistToCopy->size;
@@ -32,6 +33,17 @@ Playlist::Playlist(string name){
 * @return Essa função retorna o nome da playlist;
 */
 
+
+/**
+* @brief getData(), funcao que retorna a data classe playlist.
+*/
+List<Music> Playlist::getData(){
+    return this->data;
+}
+
+/**
+* @brief getKey(), funcao que retorna o nome  playlist.
+*/
 string Playlist::getKey(){
     return this->name;
 };
@@ -70,6 +82,23 @@ void Playlist::removeSongFromPlaylist(string key) {
         this->size -=1;
     }else {
         cout<<"unable to remove a song from an empty playlist"<<endl;
+    }
+}
+
+void Playlist::removeSongFromPlaylist(Playlist &playlist) {
+     Node<Music>* current = this->data.head;
+     Node<Music>* current2 = playlist.data.head;
+    while(current->next != nullptr){
+        if(current->data.getKey() == current2->data.getKey()){
+            this->data.removeItem(current->data.getKey());
+        }
+        if(current2->next== nullptr){
+            current2 = playlist.data.head;
+            current = this->data.head;
+        }else{
+            current2 =current2->next;
+            current = current->next;
+        }
     }
 }
 

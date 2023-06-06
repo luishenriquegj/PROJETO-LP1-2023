@@ -9,7 +9,7 @@
 #include "Playlist.h"
 
 
-void uniteLists(List<Music> &firstList, List<Playlist> &secondList);
+void uniteLists(List<Music> &firstList, List<Playlist> secondList);
 void showAllSongs(List<Music> &musicList);
 void findPlaylist(List<Playlist> &playlists);
 void populateSystem(List<Music> &musicList);

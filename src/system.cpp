@@ -7,6 +7,7 @@
 #include "Node.h"
 #include "Playlist.h"
 #include "RemoveSongFromAll.h"
+#include "CompareLists.h"
 #include "System.h"
 
 using namespace std;
@@ -103,6 +104,7 @@ void addNewList(List<Music> &musicList) {
 }
 
 void uniteLists(List<Music> &firstList, List<Playlist> & secondList){
+    
     string list1 ="",list2="";
     int selection2 =2;
     system("clear");
@@ -120,6 +122,7 @@ void uniteLists(List<Music> &firstList, List<Playlist> & secondList){
         cout<<"type a name of a playlist"<<endl;
         getline(cin,list1);
     }
+   
     system("clear");
     cout<<"do you wish to copy all the musics from  the system to the selected playlist?"<<endl;
     cout<<"press 1 to yes and 0 to no"<<endl;
@@ -133,21 +136,34 @@ void uniteLists(List<Music> &firstList, List<Playlist> & secondList){
     
     switch (selection2) {
         case 1:
+         if(compareLists(firstList,secondList.findItem(list1)->data.data)){
+            system("clear");
+            cout<<"can't unite lists that have the same item(s) or are both empty"<<endl;
+            cout<<"press enter to continue..."<<endl;
+            cin.ignore();
+            return;
+        }else {
             secondList.findItem(list1)->data.data + firstList;
+        }
         break;
         default:
-            
             while(secondList.findItem(list2)==nullptr){
-                system("clear");
-                cout<<"avaliable playlists"<<endl;
-                secondList.print();
-                cout<<"from wich playlist do you wish to get the songs from?"<<endl;
-                getline(cin,list2);
-                getline(cin,list2);
+                    system("clear");
+                    cout<<"avaliable playlists"<<endl;
+                    secondList.print();
+                    cout<<"from wich playlist do you wish to get the songs from?"<<endl;
+                    getline(cin,list2);
+                    getline(cin,list2);
             }
-
-            secondList.findItem(list1)->data.data + secondList.findItem(list2)->data.data;
-
+            if(compareLists(secondList.findItem(list2)->data.data,secondList.findItem(list1)->data.data)){
+                system("clear");
+                cout<<"can't unite lists that have the same item(s) or are both empty"<<endl;
+                cout<<"press enter to continue..."<<endl;
+                cin.ignore();
+                return;
+            }else {
+                secondList.findItem(list1)->data.data + secondList.findItem(list2)->data.data;
+            }
         break;
     }
 }

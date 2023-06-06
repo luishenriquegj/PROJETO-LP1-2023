@@ -9,4 +9,5 @@ add_executable (program
   src/playlist.cpp
   src/removeSongFromAll.cpp
   src/system.cpp
+  src/compareLists.cpp
 )

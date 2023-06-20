@@ -3,6 +3,7 @@
 
 #include "Node.h"
 #include <string>
+#include <iostream>
 
 template <typename T> 
 
@@ -23,24 +24,17 @@ class List {
 
         ~List();
 
-        List<T>& operator+(List<T>& secondlist) {
-                Node<T>* current = head;
-                if(current ==nullptr){
-                       this->add(secondlist.head);
-                       return *this;
-                }
-                while (current->next != nullptr) {
+
+        List<T>* operator+(List<T> &secondlist) {
+                Node<T>* current = secondlist.head;
+                List<T>* newList = this;
+
+                while(current!=nullptr){
+                        newList->add(current);
                         current = current->next;
                 }
-        
-                Node<T>* secondCurrent = secondlist.head;
-                while (secondCurrent != nullptr) {
-                        current->next = new Node<T>(secondCurrent->data);
-                        current = current->next;
-                        secondCurrent = secondCurrent->next;
-                }
-        
-                return *this;
+
+                return newList;
         }
 
         

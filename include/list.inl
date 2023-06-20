@@ -38,8 +38,6 @@ List<T>::List(List<T> *listToCopy) {
 * @brief add() é uma função template responsavel por inserir um novo Node na List,este novo node deve vir populado com suas informações (data);
 * para manter a  reusabilidade é imporante utilizar o nome dos atributios de maneira identica aos usados na classe Music.
 * @param Node<T> *newNode
-
-     
 */
 template <typename T>
 void List<T>::add(Node <T> *newNode) { 

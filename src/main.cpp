@@ -39,7 +39,7 @@ int main() {
         cout << "14 - Exit program" << endl;
         cin >> menu;
         cin.ignore();
-
+        List<Music> testList = playlists.findItem("playlist 1")->data.getData();
         switch (menu) {
             case 1:
                 addNewSong(musicList);
@@ -47,7 +47,7 @@ int main() {
             case 2:
                 break;
             case 3:
-                uniteLists(musicList,playlists);
+                uniteLists(musicList,testList);
                 break;
             case 4:
                 addNewList(musicList);

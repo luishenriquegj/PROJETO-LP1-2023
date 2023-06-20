@@ -23,11 +23,13 @@ void populateSystem(List<Music> &musicList){
     musicList.add(newNode3);
     musicList.add(newNode4);
     musicList.add(newNode5);
+    
     cout<<"system pre-populated with the following musics:"<<endl;
     musicList.print();
     cout << "Press any key to continue...";
     cin.ignore();
     system("clear");
+
 }
 
 void populateSystem(List<Playlist> &playlistList){
@@ -104,11 +106,6 @@ void addNewList(List<Music> &musicList) {
     system("clear");
 }
 
-//FAZ ISSO AQUI ARNAUD 
-void uniteLists(List<Music> &firstList, List<Playlist> &secondList){
-    
-}
-
 void removeSongFromPlaylist(List<Playlist> &playlists) {
     system("clear");
     string playlistName, songName;
@@ -134,7 +131,19 @@ void removeSongFromSystem(List<Music>& musicList, List<Playlist> &playlists) {
     system("clear");
 }
 
-void showAllSongs(List<Music>& musicList) {
+void uniteLists(List<Music> &firstList, List<Music> &secondList)
+{ 
+    system("clear");
+    List<Music>* newList = new List<Music>();
+    newList = firstList + secondList;
+    newList->print();
+    cout << "Press any key to continue...";
+    cin.ignore();
+    system("clear");
+}
+
+void showAllSongs(List<Music> &musicList)
+{
     system("clear");
     cout << "Exhibiting all playlist songs..." << endl;
     musicList.print();

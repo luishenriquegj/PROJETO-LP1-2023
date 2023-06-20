@@ -85,9 +85,10 @@ void Playlist::removeSongFromPlaylist(string key) {
     }
 }
 
+//3b
 void Playlist::removeSongFromPlaylist(Playlist &playlist) {
-     Node<Music>* current = this->data.head;
-     Node<Music>* current2 = playlist.data.head;
+    Node<Music>* current = this->data.head;
+    Node<Music>* current2 = playlist.data.head;
     while(current->next != nullptr){
         if(current->data.getKey() == current2->data.getKey()){
             this->data.removeItem(current->data.getKey());
